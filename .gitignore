@@ -1,0 +1,10 @@
+.env
+*.pyc
+__pycache__/
+data/
+pids/
+logs/*.log
+log_normalized.json
+log_dedup.json
+log_enriched.json
+.dedup_offset
