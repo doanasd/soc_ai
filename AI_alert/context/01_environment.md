@@ -103,3 +103,12 @@
 - Prefer false-negative tolerance for isolated internet noise over noisy false positives.
 - Require threshold, repetition, deviation from baseline, or corroborating signals before escalation.
 - Treat missing required telemetry as an operational alert even when no malicious event is visible.
+## Threat Intelligence Enrichment
+
+- Each event may carry a `malicious_src` field in `top_groups` derived from AbuseIPDB.
+- `malicious_src.confidence_score` ranges from 0 to 100.
+- `malicious_src.categories` lists known abuse types such as `SSH_Brute_Force`, `Web_App_Attack`, `Port_Scan`, `Brute_Force`.
+- `malicious_src.is_tor` indicates whether the source is a known Tor exit node.
+- `malicious_src.total_reports` indicates how many independent organizations reported this IP.
+- If `malicious_src` is present and `confidence_score >= 75`, treat the source as a known malicious actor.
+- Threat intel context upgrades the significance of an event but does not replace evidence-based triage.

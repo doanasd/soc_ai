@@ -83,3 +83,12 @@
 - Internal access to PostgreSQL, MySQL, Redis, MongoDB, or Elasticsearch is not automatically suspicious.
 - Multiple internal sources talking to one database host can be normal application architecture.
 - Sustained or high-count DB sessions are not proof of compromise without baseline deviation or corroborating evidence.
+## Threat Intelligence + Asset Criticality
+
+- A known malicious IP (score >= 75) targeting a critical asset raises alert priority significantly.
+- Combinations requiring immediate alert:
+  - Known malicious IP + SSH login attempt to any production host → `high` minimum
+  - Known malicious IP (score >= 90) + WAF SQLi/XSS block → `high` minimum
+  - Tor exit node + any accepted connection to private subnet → `high` minimum
+  - Known malicious IP + user_created or sudo_executed on any host → `critical`
+- Do not suppress these combinations under benign pattern rules.

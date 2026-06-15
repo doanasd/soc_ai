@@ -205,6 +205,20 @@ def build_window_summary(batch: WindowBatch, configured_window_seconds: int) -> 
         if dst_ip:
             destination_counts[str(dst_ip)] += weight
 
+        # Extract maliciousIP from sample_event for threat intel context
+        mal_ip = sample_event.get("maliciousIP")
+        mal_info = None
+        if isinstance(mal_ip, dict) and mal_ip.get("confidence_score", 0) > 0:
+            mal_info = {
+                "confidence_score": mal_ip.get("confidence_score"),
+                "isp":              mal_ip.get("isp", ""),
+                "country_code":     mal_ip.get("country_code", ""),
+                "categories":       mal_ip.get("categories", []),
+                "is_tor":           bool(mal_ip.get("is_tor")),
+                "total_reports":    mal_ip.get("total_reports", 0),
+                "source":           mal_ip.get("source", "abuseipdb"),
+            }
+
         row = {
             "group_key": data.get("group_key")
             or f"{log_type}|{src_ip or '-'}|{dst_ip or '-'}|{dst_port or '-'}|{action}",
@@ -220,6 +234,7 @@ def build_window_summary(batch: WindowBatch, configured_window_seconds: int) -> 
             "protocol": protocol,
             "count": weight,
             "sample_message": sample_event.get("message") or data.get("message"),
+            "malicious_src": mal_info,
         }
         grouped_rows.append(row)
 

@@ -78,3 +78,20 @@
 - Confirm source ownership and subnet legitimacy.
 - Check for broad host touch, broad port touch, auth failures, compromise indicators, or rapid spread.
 - Escalate only when evidence supports unauthorized internal movement.
+## Known Malicious IP Response
+
+- When `malicious_src.confidence_score >= 75`:
+  1. Block source IP at WAF or security group immediately if traffic is ongoing.
+  2. Review all events from this IP in the last 24 hours across all log types.
+  3. Check for any successful authentication or accepted sessions from this IP.
+  4. If `is_tor = true`: assume deliberate attack, escalate to senior analyst.
+  5. If `categories` includes `SSH_Brute_Force`: audit all SSH access logs on targeted hosts.
+  6. If `categories` includes `Web_App_Attack`: review WAF logs for any allowed requests from this IP.
+  7. Document IP, score, categories, and timeline in incident record.
+
+## Tor Exit Node Response
+
+- Treat any accepted connection from a Tor exit node as high priority.
+- Verify no successful authentication occurred.
+- Check for data exfiltration indicators: large outbound bytes, unusual destinations.
+- Consider blocking entire Tor exit node list at perimeter if volume is sustained.

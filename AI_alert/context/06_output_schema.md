@@ -59,3 +59,22 @@
 - If traffic is normal but noteworthy, choose a normal or low-signal category instead of `lateral_movement` or other high-risk labels.
 - Use `waf_block_rate_anomaly` before `possible_ddos` unless multi-window and service-impact conditions are satisfied.
 - Do not output markdown or commentary outside the JSON object.
+## Threat Intelligence Categories
+
+When `malicious_src` is present in top_groups, use these categories:
+
+- `brute_force` — repeated auth failures from known malicious IP
+- `web_attack` — WAF blocks from known malicious IP with Web_App_Attack category
+- `reconnaissance` — port scan from known malicious IP with Port_Scan category
+- `known_malicious_access` — any accepted connection from IP with score >= 90
+- `tor_exit_activity` — any traffic from confirmed Tor exit node
+
+## Severity Upgrade Rules with Threat Intel
+
+| Base condition | + score 75-89 | + score 90-100 | + is_tor |
+|---|---|---|---|
+| Single SSH probe | low→medium | low→high | →high |
+| SSH login failed | medium | high | critical |
+| WAF block SQLi/XSS | medium | high | high |
+| Accepted sensitive port | medium | high | critical |
+| user_created/sudo | high | critical | critical |

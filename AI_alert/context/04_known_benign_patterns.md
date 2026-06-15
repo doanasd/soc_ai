@@ -48,3 +48,12 @@
 ## Suppression Rule
 
 - If the batch matches one of these patterns and there is no contradictory evidence, prefer `should_alert=false`.
+## Threat Intelligence Exceptions
+
+- Known benign patterns DO NOT apply when `malicious_src.confidence_score >= 75`.
+- Specifically:
+  - "Single internet SYN" is NOT benign if the source has score >= 75.
+  - "Low-volume SSH probe" is NOT benign if the source is a confirmed SSH brute-forcer.
+  - "Single blocked WAF request" is NOT benign if the source has score >= 90.
+  - Tor exit nodes are never treated as background noise regardless of packet count.
+- When threat intel contradicts a benign pattern, threat intel takes precedence.

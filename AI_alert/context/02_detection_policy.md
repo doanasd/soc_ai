@@ -190,3 +190,24 @@ Baseline must consider:
 - Consider WAF rule changes, signature updates, tuning changes, and logging changes before escalating blocked-volume spikes.
 - Do not treat an authorized IP as a blanket bypass. If an authorized source hits the wrong asset, wrong environment, wrong port, or shows anomalous rate, evaluate it normally.
 - Treat recurrent low-volume SSH probes from `147.185.132.40` to `10.141.1.64` as `reconnaissance` or no-alert noise unless packet count, byte count, spread, or corroborating telemetry shows real-session behavior.
+
+## Threat Intelligence Rules
+
+- If `malicious_src.confidence_score >= 75` is present in any top_group:
+  - Treat that source IP as a confirmed malicious actor.
+  - Upgrade severity by at least one level compared to the same event without threat intel.
+  - Do NOT treat as internet background noise regardless of packet count.
+- If `malicious_src.confidence_score >= 90`:
+  - Minimum severity is `medium` even for single low-volume events.
+  - If combined with SSH login failure, WAF block, or sensitive port access → minimum `high`.
+- If `malicious_src.is_tor = true`:
+  - Treat as deliberate anonymized attack traffic, not background noise.
+  - Upgrade severity by one additional level.
+- If `malicious_src.categories` includes `SSH_Brute_Force` or `Brute_Force`:
+  - Combined with `ssh_login_failed` action → classify as `brute_force`, minimum `medium`.
+- If `malicious_src.categories` includes `Web_App_Attack`:
+  - Combined with WAF block → classify as `web_attack`, minimum `medium`.
+- If `malicious_src.categories` includes `Port_Scan`:
+  - Combined with VPC flows to multiple ports → classify as `reconnaissance`, minimum `medium`.
+- Threat intel does NOT suppress the need for corroborating evidence for `critical` severity.
+- `critical` still requires confirmed service impact or successful unauthorized access.
