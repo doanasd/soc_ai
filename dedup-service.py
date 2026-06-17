@@ -123,6 +123,20 @@ class DedupService:
             else:
                 return f"fortinet|{fg_type}|{subtype}|{src_ip}|{dst_ip}|{dst_port}|{action}"
 
+        elif log_type == "cloudtrail":
+            ct     = log.get("cloudtrailEvent", {}) or {}
+            event  = ct.get("eventName", "")
+            account= ct.get("accountId", "")
+            user   = ct.get("userName", "")
+            region = ct.get("awsRegion", "")
+            return f"cloudtrail|{account}|{region}|{event}|{user}"
+
+        elif log_type == "cisco":
+            ce     = log.get("ciscoEvent", {}) or {}
+            mnemonic  = ce.get("mnemonic", "")
+            interface = ce.get("interface", "").rstrip(",")
+            return f"cisco|{host}|{mnemonic}|{interface}"
+
         return None
 
     # ── Flush expired ─────────────────────────────────────────────────────────

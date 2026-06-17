@@ -516,156 +516,11 @@ def _is_linux_event(archive_evt: dict) -> bool:
                 return True
     return False
 
-
-def normalize_cloudtrail_event(archive_evt: dict) -> Optional[dict]:
-    """CloudTrail event đã qua pre-processor → normalize về schema chuẩn."""
-    data      = archive_evt.get("data", {}) or {}
-    rule      = archive_evt.get("rule", {}) or {}
-    agent     = archive_evt.get("agent", {}) or {}
-    predecoder = archive_evt.get("predecoder", {}) or {}
-    cloudtrail = archive_evt.get("cloudtrail", {}) or {}
-
-    aws_event   = data.get("aws_event", "")
-    aws_source  = data.get("aws_source", "")
-    aws_region  = data.get("aws_region", "")
-    aws_account = data.get("aws_account", "")
-    src_ip      = data.get("srcip", "")
-    user_name   = data.get("dstuser", "")
-    user_arn    = data.get("user_arn", "")
-    user_type   = data.get("user_type", "")
-    read_only   = data.get("read_only", "True")
-    error_code  = data.get("error_code", "")
-
-    # Classify action
-    if error_code:
-        action = "api_error"
-    elif read_only in ("True", "true", True):
-        action = "api_read"
-    else:
-        action = "api_write"
-
-    # Source IP — AWS service calls dùng service name, không phải IP
-    network_src_ip = src_ip if re.match(r'\d+\.\d+\.\d+\.\d+', src_ip) else ""
-    network_src_host = src_ip if not network_src_ip else ""
-
-    rule_level = rule.get("level", 3)
-    outcome = "unknown"
-    if rule_level >= 10: outcome = "critical"
-    elif rule_level >= 8: outcome = "failure"
-    elif rule_level >= 5: outcome = "warning"
-    elif rule_level >= 3: outcome = "success"
-
-    message = rule.get("description", f"CloudTrail: {aws_event}")
-    if error_code:
-        message += f" [ERROR: {error_code}: {data.get('error_message', '')}]"
-
-    return {
-        "time":           archive_evt.get("timestamp"),
-        "log_type":       "cloudtrail",
-        "vendor":         "aws",
-        "action":         action,
-        "outcome":        outcome,
-        "asset_host":     f"aws-{aws_account}" if aws_account else agent.get("name", ""),
-        "correlation_id": data.get("request_id", ""),
-        "network": {
-            "source_ip":        network_src_ip,
-            "source_port":      None,
-            "country":          "",
-            "destination_ip":   "",
-            "destination_port": None,
-            "protocol":         "HTTPS",
-            "method":           "POST",
-        },
-        "message": message,
-        "maliciousIP": None,
-        "waf": "", "flow": "", "winEvent": "", "fortinet": "", "linuxEvent": "",
-        "cloudtrailEvent": {
-            "eventName":    aws_event,
-            "eventSource":  aws_source,
-            "awsRegion":    aws_region,
-            "accountId":    aws_account,
-            "userType":     user_type,
-            "userName":     user_name,
-            "userArn":      user_arn,
-            "sourceIP":     src_ip,
-            "readOnly":     read_only,
-            "errorCode":    error_code,
-            "ruleLevel":    rule_level,
-            "ruleGroups":   rule.get("groups", []),
-            "ruleId":       rule.get("id", ""),
-        },
-    }
-
-
-def normalize_cisco_event(archive_evt: dict) -> Optional[dict]:
-    """Cisco IOS syslog đã qua pre-processor → normalize về schema chuẩn."""
-    data      = archive_evt.get("data", {}) or {}
-    rule      = archive_evt.get("rule", {}) or {}
-    agent     = archive_evt.get("agent", {}) or {}
-    predecoder = archive_evt.get("predecoder", {}) or {}
-
-    facility = data.get("facility", "")
-    severity = int(data.get("severity", "5"))
-    mnemonic = data.get("mnemonic", "")
-    message  = data.get("message", archive_evt.get("full_log", "")[:200])
-    src_host = agent.get("ip") or agent.get("name") or predecoder.get("hostname", "")
-
-    # Map Cisco severity → action
-    action_map = {
-        0: "emergency", 1: "alert", 2: "critical",
-        3: "error", 4: "warning", 5: "notice", 6: "info", 7: "debug"
-    }
-    action = action_map.get(severity, "notice")
-
-    outcome_map = {
-        0: "critical", 1: "critical", 2: "critical",
-        3: "failure", 4: "warning", 5: "success", 6: "success", 7: "success"
-    }
-    outcome = outcome_map.get(severity, "unknown")
-
-    # Extract interface if present
-    iface_match = re.search(r'Interface (\S+)', message)
-    interface = iface_match.group(1) if iface_match else ""
-
-    return {
-        "time":           archive_evt.get("timestamp"),
-        "log_type":       "cisco",
-        "vendor":         "Cisco",
-        "action":         action,
-        "outcome":        outcome,
-        "asset_host":     src_host,
-        "correlation_id": "",
-        "network": {
-            "source_ip":        src_host if re.match(r'\d+\.\d+\.\d+\.\d+', src_host) else "",
-            "source_port":      None,
-            "country":          "",
-            "destination_ip":   "",
-            "destination_port": None,
-            "protocol":         "",
-            "method":           "",
-        },
-        "message": f"Cisco {facility}-{severity}-{mnemonic}: {message[:200]}",
-        "maliciousIP": None,
-        "waf": "", "flow": "", "winEvent": "", "fortinet": "", "linuxEvent": "",
-        "ciscoEvent": {
-            "facility":  facility,
-            "severity":  severity,
-            "mnemonic":  mnemonic,
-            "interface": interface,
-            "message":   message,
-            "ruleLevel": rule.get("level", 3),
-            "ruleId":    rule.get("id", ""),
-            "ruleGroups": rule.get("groups", []),
-        },
-    }
-
 def normalize_event(archive_evt: dict) -> Optional[dict]:
     location     = archive_evt.get("location", "")
     data         = archive_evt.get("data", {})
     full_log_raw = archive_evt.get("full_log", "")
     parsed_full  = parse_json_safe(full_log_raw)
-    loc          = str(location) if location else ""
-    decoder_name = str((archive_evt.get("decoder") or {}).get("name", ""))
 
     if isinstance(location, str):
         if location.startswith(WAF_LOCATION_PREFIX):
@@ -696,14 +551,6 @@ def normalize_event(archive_evt: dict) -> Optional[dict]:
 
     if _is_linux_event(archive_evt):
         return normalize_linux_event(archive_evt)
-
-    # CloudTrail — đã qua pre-processor
-    if (isinstance(location, str) and location.startswith("/aws/cloudtrail/")) or decoder_name == "cloudtrail":
-        return normalize_cloudtrail_event(archive_evt)
-
-    # Cisco IOS — đã qua pre-processor
-    if (isinstance(location, str) and location.startswith("/cisco/")) or decoder_name == "cisco-ios":
-        return normalize_cisco_event(archive_evt)
 
     return None
 
@@ -740,8 +587,8 @@ def follow_file(path, start_from_beginning=False):
 
 def main():
     os.makedirs(os.path.dirname(os.path.abspath(OUTPUT_FILE)), exist_ok=True)
-    stats = {"waf":0,"vpc":0,"windows":0,"linux":0,"fortinet":0,"cloudtrail":0,"cisco":0,"skipped":0,"errors":0}
-    TYPE_MAP = {"waf":"waf","vpc":"vpc","win":"windows","linux":"linux","fortinet":"fortinet","cloudtrail":"cloudtrail","cisco":"cisco"}
+    stats = {"waf":0,"vpc":0,"windows":0,"linux":0,"fortinet":0,"skipped":0,"errors":0}
+    TYPE_MAP = {"waf":"waf","vpc":"vpc","win":"windows","linux":"linux","fortinet":"fortinet"}
 
     print(f"[normalize] Starting...")
     print(f"[normalize] Input:  {RAW_LOG_PATH}")
@@ -768,7 +615,7 @@ def main():
             mapped   = TYPE_MAP.get(log_type)
             if mapped:
                 stats[mapped] += 1
-                total = sum(stats[k] for k in ("waf","vpc","windows","linux","fortinet","cloudtrail","cisco"))
+                total = sum(stats[k] for k in ("waf","vpc","windows","linux","fortinet"))
                 print(
                     f"[normalize] +1 {log_type:10s} | "
                     f"WAF={stats['waf']} VPC={stats['vpc']} "

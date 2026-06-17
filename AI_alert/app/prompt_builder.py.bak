@@ -54,14 +54,6 @@ Rules:
 - High severity for WAF flood or DDoS-style behavior should usually require sustained multi-window recurrence in the last hour or explicit service degradation evidence.
 - Use `possible_ddos` only when recurrence is clearly multi-window and the evidence shows broad or sustained pressure, not for a one-off blocked spike.
 - Reserve `critical` for confirmed material service impact, not just repeated blocked traffic.
-- When `top_groups` contains entries where `malicious_src` is not null, apply threat intelligence severity rules:
-  - `malicious_src.confidence_score >= 75`: do NOT apply benign suppression; upgrade severity by one level minimum.
-  - `malicious_src.confidence_score >= 90`: treat as strong corroborating evidence; minimum severity is `high` when combined with auth failure, SSH, or sensitive port activity.
-  - `malicious_src.is_tor = true`: upgrade severity by one additional level on top of confidence_score upgrade.
-  - `malicious_src.categories` includes `SSH_Brute_Force` with SSH login failures: category = `auth_abuse`, minimum severity `medium`.
-  - Allowed traffic (action=allow/accept) from a high-confidence malicious IP is more suspicious than blocked traffic from an unknown IP.
-  - Always reference `confidence_score`, `isp`, `country_code`, `categories`, and `is_tor` in your reasoning when `malicious_src` is present.
-  - Severity upgrade must be explicitly stated in reasoning, e.g. "Source IP has AbuseIPDB confidence_score=100, SSH_Brute_Force category. Severity upgraded from low to high per threat intelligence rules."
 
 Output JSON schema:
 - should_alert: boolean
