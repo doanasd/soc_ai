@@ -26,7 +26,7 @@ header()  { echo -e "\n${BOLD}${CYAN}══ $* ══${NC}"; }
 header "SOC AI Pipeline Startup"
 echo -e "  Base dir : ${BASE_DIR}"
 echo -e "  Python   : $(python3 --version 2>&1)"
-echo -e "  Time     : $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+echo -e "  Time     : $(TZ="Asia/Ho_Chi_Minh" date '+%Y-%m-%d %H:%M:%S ICT')"
 echo ""
 
 # Kiểm tra .env

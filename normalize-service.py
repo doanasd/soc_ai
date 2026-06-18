@@ -13,9 +13,10 @@ from typing import Optional
 RAW_LOG_PATH = os.getenv("RAW_LOG_PATH",    "/home/ubuntu/soc_ai/raw_sample.json")
 OUTPUT_FILE  = os.getenv("NORMALIZED_PATH", "/home/ubuntu/soc_ai/log_normalized.json")
 
-WAF_LOCATION_PREFIX      = "/tmp/aws-waf/waf/"
-VPC_LOCATION_PREFIX      = "/tmp/aws-waf/vpc/"
-FORTINET_LOCATION_PREFIX = "/tmp/fortinet/"
+WAF_LOCATION_PREFIX        = "/tmp/aws-waf/waf/"
+VPC_LOCATION_PREFIX        = "/tmp/aws-waf/vpc/"
+FORTINET_LOCATION_PREFIX   = "/tmp/fortinet/"
+CISCO_LOCATION_PREFIX      = "/tmp/cisco/"
 
 LINUX_LOG_LOCATIONS = (
     "/var/log/syslog", "/var/log/auth.log", "/var/log/secure",
@@ -773,7 +774,8 @@ def main():
                     f"[normalize] +1 {log_type:10s} | "
                     f"WAF={stats['waf']} VPC={stats['vpc']} "
                     f"WIN={stats['windows']} LNX={stats['linux']} "
-                    f"FTN={stats['fortinet']} | total={total}"
+                    f"FTN={stats['fortinet']} CT={stats['cloudtrail']} "
+                    f"CS={stats['cisco']} | total={total}"
                 )
             else:
                 stats["skipped"] += 1

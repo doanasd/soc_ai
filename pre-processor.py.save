@@ -1,0 +1,93 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Pre-processor: Convert raw log lines → Wazuh-like JSON archive
+Supports: syslog text, Cisco IOS, WAF JSON, VPC JSON, CloudTrail JSON
+Output: JSONL, each line is a Wazuh-like JSON object ready for normalize-service.py
+"""
+import json
+import os
+import re
+import time
+from datetime import datetime, timezone
+from typing import Optional
+
+RAW_LOG_PATH = os.getenv("ORIGINAL_RAW_LOG", "/home/ubuntu/soc_ai/raw_sample.json")
+OUTPUT_FILE  = os.getenv("NORMALIZED_PATH", "/home/ubuntu/soc_ai/log_normalized.json")
+# Pre-processor writes to an intermediate file
+OUTPUT_FILE  = os.getenv("PREPROCESSED_PATH", "/home/ubuntu/soc_ai/log_preprocessed.json")
+LOG_START_POSITION = os.getenv("LOG_START_POSITION", "end")
+
+# ── Syslog patterns ───────────────────────────────────────────────────────────
+
+SYSLOG_RE = re.compile(
+    r'^(?P<month>Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+'
+    r'(?P<day>\d+)\s+(?P<time>\d{2}:\d{2}:\d{2})\s+'
+    r'(?P<host>\S+)\s+'
+    r'(?P<program>[^\[:]+?)(?:\[(?P<pid>\d+)\])?:\s*'
+    r'(?P<message>.*)$',
+    re.DOTALL
+)
+
+CISCO_RE = re.compile(r'%(?P<facility>[A-Z0-9_]+)-(?P<severity>\d)-(?P<mnemonic>[A-Z0-9_]+):\s*(?P<message>.*)')
+
+
+# SSH decoder patterns
+SSH_FAIL_RE    = re.compile(r'(?:Failed password|Invalid user|authentication failure).*?from\s+(\d+\.\d+\.\d+\.\d+)\s+port\s+(\d+)', re.I)
+SSH_ACCEPT_RE  = re.compile(r'Accepted (?:password|publickey) for (\S+) from (\d+\.\d+\.\d+\.\d+)\s+port\s+(\d+)', re.I)
+SSH_CLOSED_RE  = re.compile(r'Connection closed by (?:invalid user \S+ )?(\d+\.\d+\.\d+\.\d+)\s+port\s+(\d+)', re.I)
+SUDO_RE        = re.compile(r'(\S+)\s*:\s*TTY=\S+\s*;\s*PWD=\S+\s*;\s*USER=(\S+)\s*;\s*COMMAND=(.*)', re.I)
+PAM_RE         = re.compile(r'pam_unix\(([^)]+)\):\s*(.*)')
+
+MONTH_MAP = {
+    "Jan":1,"Feb":2,"Mar":3,"Apr":4,"May":5,"Jun":6,
+    "Jul":7,"Aug":8,"Sep":9,"Oct":10,"Nov":11,"Dec":12
+}
+
+def parse_syslog_timestamp(month: str, day: str, time_str: str) -> str:
+    now = datetime.now(timezone.utc)
+    try:
+        m = MONTH_MAP.get(month, 1)
+        d = int(day)
+        h, mi, s = map(int, time_str.split(":"))
+        year = now.year if m <= now.month else now.year - 1
+        dt = datetime(year, m, d, h, mi, s, tzinfo=timezone.utc)
+        return dt.isoformat().replace("+00:00", "Z")
+    except Exception:
+        return now.isoformat().replace("+00:00", "Z")
+
+def classify_syslog(program: str, message: str):
+    """Returns (rule_id, rule_level, rule_description, groups, decoder_name, src_ip, src_port, user)"""
+    prog = program.strip().lower()
+    msg  = message.strip()
+
+    # SSH
+    if prog in ("sshd",):
+        m = SSH_FAIL_RE.search(msg)
+        if m:
+            return ("5710", 10, "sshd: Attempt to login using a non-existent user",
+                    ["syslog","sshd","authentication_failed"], "sshd",
+                    m.group(1), m.group(2), None)
+        m = SSH_ACCEPT_RE.search(msg)
+        if m:
+            return ("5715", 3, "sshd: authentication success",
+                    ["syslog","sshd","authentication_success"], "sshd",
+                    m.group(2), m.group(3), m.group(1))
+        m = SSH_CLOSED_RE.search(msg)
+        if m:
+            return ("5710", 5, "sshd: connection closed",
+                    ["syslog","sshd"], "sshd", m.group(1), m.group(2), None)
+        if "invalid user" in msg.lower():
+            ip_m = re.search(r'from\s+(\d+\.\d+\.\d+\.\d+)', msg)
+            return ("5710", 10, "sshd: Invalid user",
+                    ["syslog","sshd","authentication_failed"], "sshd",
+                    ip_m.group(1) if ip_m else None, None, None)
+        return ("5700", 5, f"sshd: {msg[:80]}",
+                ["syslog","sshd"], "sshd", None, None, None)
+
+    # sudo
+    if prog in ("sudo",):
+        m = SUDO_RE.search(msg)
+        if m:
+            return ("5402", 3, f"sudo: {m.group(1)} ran {m.group(3)[:60]} as {m.group(2)}",
+                    ["syslog","sudo"], "sudo", None, None, m
