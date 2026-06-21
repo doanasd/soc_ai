@@ -209,11 +209,13 @@ def classify_linux_action(rule_id, full_log: str, decoder_name: str) -> str:
         rid = 0
     fl  = (full_log or "").lower()
     dec = (decoder_name or "").lower()
+
     if rid in (5715, 5716):       return "ssh_login_success"
     if rid in (5710, 5711, 5712): return "ssh_login_failed"
     if rid in (5400, 5401, 5402): return "sudo_executed"
     if rid in (5901, 5902):       return "user_created"
     if rid in (5903, 5904):       return "user_deleted"
+
     if "sshd" in dec or "sshd" in fl:
         if "accepted" in fl:                          return "ssh_login_success"
         if "failed" in fl or "invalid user" in fl:    return "ssh_login_failed"
@@ -227,7 +229,61 @@ def classify_linux_action(rule_id, full_log: str, decoder_name: str) -> str:
     if "pam" in dec:
         if "authentication failure" in fl: return "pam_auth_failed"
         if "session opened" in fl:         return "pam_session_opened"
+        if "session closed" in fl:         return "pam_session_closed"
         return "pam_event"
+
+    # CRON
+    if "cron" in dec:
+        if "session opened" in fl:  return "cron_session_opened"
+        if "session closed" in fl:  return "cron_session_closed"
+        if "cmd" in fl or "command" in fl: return "cron_command_executed"
+        return "cron_event"
+
+    # systemd-logind (session events)
+    if "systemd" in dec and "new session" in fl:
+        return "session_opened"
+    if "systemd" in dec:
+        if "starting" in fl: return "service_starting"
+        if "finished" in fl: return "service_finished"
+        if "deactivated" in fl: return "service_stopped"
+        return "systemd_event"
+
+    # OpenVPN
+    if "openvpn" in dec:
+        if "failed" in fl or "error" in fl: return "vpn_connection_failed"
+        return "vpn_event"
+
+    # Audit
+    if "auditd" in dec:
+        if "syscall" in fl: return "audit_syscall"
+        if "user_acct" in fl or "cred_acq" in fl: return "audit_account_action"
+        return "audit_event"
+
+    # Kernel
+    if "kernel" in dec:
+        if "apparmor" in fl: return "apparmor_event"
+        if "capacity change" in fl: return "device_capacity_change"
+        return "kernel_event"
+
+    # Disk health
+    if "smartd" in dec:
+        if "prefailure" in fl: return "disk_prefailure_warning"
+        return "disk_health_check"
+
+    # Platform noise (snapd, dbus, fwupd, motd, apt, network-wait, resolved)
+    if "platform_noise" in dec or dec in (
+        "snapd", "dbus-daemon", "fwupd", "fwupdmgr", "fstrim",
+        "50-motd-news", "apt-helper", "systemd-networkd-wait-online",
+        "systemd-resolved",
+    ):
+        return "platform_maintenance"
+
+    # Application logs (python, opensearch)
+    if "python" in dec:
+        return "application_log"
+    if "opensearch" in dec:
+        return "siem_index_event"
+
     return "syslog_event"
 
 def extract_linux_source_ip(full_log: str, data: dict) -> str:
@@ -259,6 +315,114 @@ def extract_linux_user(full_log: str, data: dict) -> str:
                 return m.group(1)
     return ""
 
+# Standard Linux syslog format: MMM DD HH:MM:SS host program[pid]: message
+LINUX_SYSLOG_RE = re.compile(
+    r'^(?P<month>Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+'
+    r'(?P<day>\d+)\s+(?P<time>\d{2}:\d{2}:\d{2})\s+'
+    r'(?P<host>\S+)\s+'
+    r'(?P<program>[^\[:]+?)(?:\[(?P<pid>\d+)\])?:\s*'
+    r'(?P<message>.*)$',
+    re.DOTALL
+)
+MONTH_MAP_LINUX = {
+    "Jan":1,"Feb":2,"Mar":3,"Apr":4,"May":5,"Jun":6,
+    "Jul":7,"Aug":8,"Sep":9,"Oct":10,"Nov":11,"Dec":12
+}
+
+def _parse_linux_syslog_ts(month: str, day: str, time_str: str) -> str:
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc)
+    try:
+        m = MONTH_MAP_LINUX.get(month, 1)
+        d = int(day)
+        h, mi, s = map(int, time_str.split(":"))
+        year = now.year if m <= now.month else now.year - 1
+        dt = datetime(year, m, d, h, mi, s, tzinfo=timezone.utc)
+        return dt.isoformat().replace("+00:00", "Z")
+    except Exception:
+        return now.isoformat().replace("+00:00", "Z")
+
+
+def classify_linux_program(program: str, message: str):
+    """
+    Tự classify Linux syslog program/message trực tiếp từ raw text
+    (thay thế việc pre-processor từng làm).
+    Trả về (rule_id, rule_level, rule_description, groups, decoder_name)
+    """
+    prog = program.strip().lower()
+    msg  = message.strip()
+
+    if prog == "sshd":
+        if re.search(r'(?:Failed password|Invalid user|authentication failure)', msg, re.I):
+            return ("5710", 10, "sshd: Attempt to login using a non-existent or invalid user",
+                    ["syslog","sshd","authentication_failed"], "sshd")
+        if re.search(r'Accepted (?:password|publickey)', msg, re.I):
+            return ("5715", 3, "sshd: authentication success",
+                    ["syslog","sshd","authentication_success"], "sshd")
+        if "connection closed" in msg.lower():
+            return ("5710", 5, "sshd: connection closed",
+                    ["syslog","sshd"], "sshd")
+        return ("5700", 5, f"sshd: {msg[:80]}", ["syslog","sshd"], "sshd")
+
+    if prog == "sudo":
+        if re.search(r'COMMAND=', msg):
+            return ("5402", 3, f"sudo: {msg[:80]}", ["syslog","sudo"], "sudo")
+        return ("5400", 3, f"sudo: {msg[:80]}", ["syslog","sudo"], "sudo")
+
+    if prog in ("cron",) or prog == "cron":
+        if "session opened" in msg.lower():
+            return ("2830", 3, f"CRON: {msg[:80]}", ["syslog","cron","authentication_success"], "cron")
+        return ("2830", 3, f"CRON: {msg[:80]}", ["syslog","cron"], "cron")
+
+    if "pam_unix" in msg.lower() or "pam" in prog:
+        if "session opened" in msg.lower():
+            return ("5501", 3, f"PAM: {msg[:80]}", ["syslog","pam","authentication_success"], "pam")
+        if "session closed" in msg.lower():
+            return ("5502", 3, f"PAM: {msg[:80]}", ["syslog","pam"], "pam")
+        if "authentication failure" in msg.lower():
+            return ("5503", 5, f"PAM: {msg[:80]}", ["syslog","pam","authentication_failed"], "pam")
+        return ("5500", 3, f"PAM: {msg[:80]}", ["syslog","pam"], "pam")
+
+    if "systemd-logind" in prog:
+        if "new session" in msg.lower():
+            return ("5501", 5, f"systemd-logind: {msg[:80]}",
+                    ["syslog","systemd","authentication_success"], "systemd")
+        return ("1002", 3, f"systemd-logind: {msg[:80]}", ["syslog","systemd"], "systemd")
+
+    if "systemd" in prog and "systemd-logind" not in prog:
+        return ("1002", 2, f"systemd: {msg[:80]}", ["syslog","systemd"], "systemd")
+
+    if "openvpn" in prog or "ovpn" in prog:
+        if re.search(r'failed|error', msg, re.I):
+            return ("8001", 5, f"OpenVPN: {msg[:80]}",
+                    ["syslog","openvpn","authentication_failed"], "openvpn")
+        return ("8000", 3, f"OpenVPN: {msg[:80]}", ["syslog","openvpn"], "openvpn")
+
+    if prog in ("audit", "auditd"):
+        return ("80700", 3, f"audit: {msg[:80]}", ["syslog","audit"], "auditd")
+
+    if prog == "kernel":
+        return ("1010", 2, f"kernel: {msg[:80]}", ["syslog","kernel"], "kernel")
+
+    if "smartd" in prog:
+        if "prefailure" in msg.lower():
+            return ("2900", 8, f"smartd: {msg[:80]}", ["syslog","disk","prefailure"], "smartd")
+        return ("2900", 2, f"smartd: {msg[:80]}", ["syslog","disk"], "smartd")
+
+    if "snapd" in prog or "dbus-daemon" in prog or "fwupd" in prog or "fwupdmgr" in prog \
+            or "fstrim" in prog or "50-motd-news" in prog or "apt-helper" in prog \
+            or "systemd-networkd-wait-online" in prog or "systemd-resolved" in prog:
+        return ("1002", 1, f"{program}: {msg[:80]}", ["syslog","platform_noise"], prog)
+
+    if "python" in prog or "python3" in prog:
+        return ("1003", 2, f"{program}: {msg[:80]}", ["syslog","application"], "python")
+
+    if "opensearch" in prog:
+        return ("1003", 1, f"opensearch: {msg[:80]}", ["syslog","application"], "opensearch")
+
+    return ("1002", 2, f"{program}: {msg[:80]}", ["syslog","linux"], "syslog")
+
+
 def normalize_linux_event(archive_evt: dict) -> Optional[dict]:
     full_log_raw = archive_evt.get("full_log", "")
     data         = archive_evt.get("data", {}) or {}
@@ -266,6 +430,24 @@ def normalize_linux_event(archive_evt: dict) -> Optional[dict]:
     agent        = archive_evt.get("agent", {}) or {}
     decoder      = archive_evt.get("decoder", {}) or {}
     predecoder   = archive_evt.get("predecoder", {}) or {}
+
+    # Nếu chưa có rule (raw text trực tiếp, chưa pre-processed) → tự classify
+    if not rule.get("id") and full_log_raw:
+        m = LINUX_SYSLOG_RE.match(full_log_raw.strip())
+        if m:
+            program = m.group("program").strip()
+            message = m.group("message").strip()
+            host    = m.group("host")
+            rule_id, rule_level, rule_desc, groups, decoder_name = \
+                classify_linux_program(program, message)
+            rule = {"id": rule_id, "level": rule_level, "description": rule_desc, "groups": groups}
+            decoder = {"name": decoder_name}
+            predecoder = {"hostname": host, "program_name": program, "pid": m.group("pid") or ""}
+            if not archive_evt.get("timestamp"):
+                archive_evt["timestamp"] = _parse_linux_syslog_ts(
+                    m.group("month"), m.group("day"), m.group("time")
+                )
+
     rule_id          = rule.get("id", "")
     rule_level       = rule.get("level", 0)
     rule_description = rule.get("description", "")
@@ -419,6 +601,17 @@ def normalize_fortinet_event(archive_evt: dict) -> Optional[dict]:
     log_type_fg = kv.get("type", "")
     subtype     = kv.get("subtype", "")
     action      = kv.get("action", "")
+    # Event-type logs (security-rating, system, user) thường không có action=
+    # → dùng logdesc hoặc subtype làm action thay thế để không bị rỗng
+    if not action:
+        if log_type_fg == "event":
+            logdesc = kv.get("logdesc", "")
+            if logdesc:
+                action = re.sub(r'[^a-zA-Z0-9]+', '_', logdesc.strip().lower()).strip('_')
+            else:
+                action = f"event_{subtype}" if subtype else "event_unknown"
+        else:
+            action = kv.get("eventtype", "") or f"{log_type_fg}_{subtype}" if log_type_fg else "unknown"
     outcome     = outcome_from_fortinet_action(action, subtype)
     src_ip      = kv.get("srcip", "")
     dst_ip      = kv.get("dstip", "")
@@ -478,6 +671,188 @@ def normalize_fortinet_event(archive_evt: dict) -> Optional[dict]:
         },
     }
 
+
+# ── Windows MSWinEventLog (direct raw, syslog-forwarded) ──────────────────────
+
+WIN_EVENTID_OUTCOME_MAP = {
+    "4624": "success", "4625": "failure", "4634": "success",
+    "4720": "success", "4722": "success", "4725": "success",
+    "4726": "success", "4688": "success", "4740": "success",
+    "4672": "success",  # special privileges assigned
+}
+WIN_EVENTID_SEVERITY_MAP = {
+    "4625": 8,   # logon failure
+    "4720": 10,  # user created
+    "4726": 8,   # user deleted
+    "4672": 8,   # special privileges (admin logon)
+    "4740": 8,   # account lockout
+    "4688": 3,   # process creation
+    "4624": 3,   # logon success
+}
+
+MONTH_MAP_WIN = {
+    "Jan":1,"Feb":2,"Mar":3,"Apr":4,"May":5,"Jun":6,
+    "Jul":7,"Aug":8,"Sep":9,"Oct":10,"Nov":11,"Dec":12
+}
+
+def _parse_win_syslog_timestamp(month: str, day: str, time_str: str) -> str:
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc)
+    try:
+        m = MONTH_MAP_WIN.get(month, 1)
+        d = int(day)
+        h, mi, s = map(int, time_str.split(":"))
+        year = now.year if m <= now.month else now.year - 1
+        dt = datetime(year, m, d, h, mi, s, tzinfo=timezone.utc)
+        return dt.isoformat().replace("+00:00", "Z")
+    except Exception:
+        return now.isoformat().replace("+00:00", "Z")
+
+
+def extract_win_ip_from_message(message: str) -> str:
+    """Tìm IP trong message text — thường ở dạng 'Source Network Address: x.x.x.x'."""
+    m = re.search(
+        r'(?:Source Network Address|IP Address|Network Address|Caller Computer Name):\s*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})',
+        message, re.I
+    )
+    if m:
+        return m.group(1)
+    m2 = re.search(r'\b(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\b', message)
+    return m2.group(1) if m2 else ""
+
+
+def extract_win_user_from_message(message: str) -> str:
+    m = re.search(r'(?:Account Name|Logon Account|Target Account Name|New Account Name):\s*(\S+)', message, re.I)
+    return m.group(1) if m else ""
+
+
+def normalize_windows_eventlog_direct(line: str) -> Optional[dict]:
+    """
+    Normalize raw MSWinEventLog syslog-forwarded line trực tiếp (KHÔNG qua pre-processor).
+    Output đúng schema "win" thống nhất với normalize_windows_event().
+    """
+    m = MSWINEVENTLOG_DIRECT_RE.match(line.strip())
+    if not m:
+        return None
+
+    host = m.group("host")
+    rest = m.group("rest")
+    fields = rest.split("\t")
+    # Loại bỏ phần tử rỗng ở cuối do trailing tab, nhưng GIỮ index gốc
+    # (không strip toàn bộ vì sẽ làm lệch index các field rỗng ở giữa)
+
+    if len(fields) < 8:
+        return None
+
+    def fget(idx, default=""):
+        return fields[idx].strip() if idx < len(fields) and fields[idx] is not None else default
+
+    log_name      = fget(1)            # Application / Security / System
+    event_id      = fget(4)            # EventID thật nằm ở index 4
+    source_name   = fget(5)            # ProviderName
+    event_outcome = fget(8)            # "Information" / "Failure Audit" / "Success Audit"
+    computer      = fget(9) or host
+    category      = fget(10)           # "Logon" / "N/A" / ...
+    message       = fget(12)
+    if not message and len(fields) > 13:
+        # Một số dòng message rỗng do double-tab, lấy field kế tiếp có nội dung
+        message = fget(13)
+
+    src_ip      = extract_win_ip_from_message(message)
+    target_user = extract_win_user_from_message(message)
+    ts          = _parse_win_syslog_timestamp(m.group("month"), m.group("day"), m.group("time"))
+
+    outcome_lower = event_outcome.lower()
+    if "failure" in outcome_lower:
+        outcome = "failure"
+    elif "success" in outcome_lower:
+        outcome = "success"
+    elif "information" in outcome_lower:
+        outcome = WIN_EVENTID_OUTCOME_MAP.get(event_id, "info")
+    else:
+        outcome = WIN_EVENTID_OUTCOME_MAP.get(event_id, "unknown")
+
+    rule_level = WIN_EVENTID_SEVERITY_MAP.get(event_id, 3 if outcome == "info" else 5)
+
+    def first_line(msg, limit=200):
+        if not msg:
+            return ""
+        for sep in [".\r\n", ".\n", ". "]:
+            if sep in msg:
+                return msg.split(sep)[0].strip()[:limit] + "."
+        return msg.strip()[:limit]
+
+    return {
+        "time":           ts,
+        "log_type":       "win",
+        "vendor":         "Microsoft",
+        "action":         event_id or "0",
+        "outcome":        outcome,
+        "asset_host":     computer,
+        "correlation_id": "",
+        "network": {
+            "source_ip":        src_ip,
+            "source_port":      "",
+            "country":          "",
+            "destination_ip":   "",
+            "destination_port": "",
+            "protocol":         "",
+            "method":           "",
+        },
+        "message":     first_line(message) or f"{log_name}: {source_name}",
+        "maliciousIP": None,
+        "waf": "", "flow": "", "linuxEvent": "", "fortinet": "",
+        "winEvent": {
+            "providerName":              source_name,
+            "channel":                   log_name,
+            "eventID":                   event_id,
+            "logonType":                 "",
+            "processName":               "",
+            "subjectUserName":           "",
+            "subjectDomainName":         "",
+            "targetUserName":            target_user,
+            "targetDomainName":          "",
+            "authenticationPackageName": "",
+            "workstationName":           "",
+            "ipAddress":                 src_ip,
+            "category":                  category,
+            "eventOutcomeRaw":           event_outcome,
+        },
+    }
+
+
+def route_text_line(line: str) -> Optional[dict]:
+    """
+    Nhận diện và normalize một dòng raw text (không phải JSON, không phải
+    MSWinEventLog) — thử lần lượt Cisco, FortiGate, rồi Linux syslog.
+    Trả về normalized dict hoặc None nếu không khớp loại nào.
+    """
+    stripped = line.strip()
+    if not stripped:
+        return None
+
+    # 1. Cisco IOS — pattern %FACILITY-SEV-MNEMONIC rất đặc trưng, thử trước
+    if re.search(r'%[A-Z0-9_]+-\d-[A-Z0-9_]+:', stripped):
+        result = normalize_cisco_event({"full_log": stripped})
+        if result:
+            return result
+
+    # 2. FortiGate — đặc trưng bởi devname= hoặc devid=
+    if "devname=" in stripped or "devid=" in stripped:
+        result = normalize_fortinet_event({"full_log": stripped})
+        if result:
+            return result
+
+    # 3. Linux syslog — fallback cuối cùng (pattern chung nhất)
+    if LINUX_SYSLOG_RE.match(stripped):
+        archive_evt = {"full_log": stripped}
+        result = normalize_linux_event(archive_evt)
+        if result:
+            return result
+
+    return None
+
+
 def _is_linux_event(archive_evt: dict) -> bool:
     location = archive_evt.get("location", "")
     if isinstance(location, str):
@@ -518,56 +893,128 @@ def _is_linux_event(archive_evt: dict) -> bool:
     return False
 
 
+# High-risk CloudTrail events — luôn được severity cao bất kể readOnly
+CLOUDTRAIL_HIGH_RISK_EVENTS = {
+    "CreateUser","DeleteUser","AttachUserPolicy","DetachUserPolicy",
+    "CreateAccessKey","DeleteAccessKey","PutUserPolicy","AddUserToGroup",
+    "CreateRole","DeleteRole","AttachRolePolicy","PutRolePolicy",
+    "CreateGroup","DeleteGroup","AttachGroupPolicy",
+    "AuthorizeSecurityGroupIngress","AuthorizeSecurityGroupEgress",
+    "CreateSecurityGroup","DeleteSecurityGroup",
+    "ModifyInstanceAttribute","RunInstances","TerminateInstances",
+    "CreateBucket","DeleteBucket","PutBucketPolicy","DeleteBucketPolicy",
+    "ConsoleLogin","StopLogging","DeleteTrail","UpdateTrail",
+}
+CLOUDTRAIL_MEDIUM_RISK_EVENTS = {
+    "ListUsers","ListRoles","ListBuckets","DescribeInstances",
+    "GetSecretValue","ListSecrets","DescribeSecurityGroups",
+    "GetBucketAcl","GetBucketPolicy",
+}
+
+
 def normalize_cloudtrail_event(archive_evt: dict) -> Optional[dict]:
-    """CloudTrail event đã qua pre-processor → normalize về schema chuẩn."""
-    data      = archive_evt.get("data", {}) or {}
-    rule      = archive_evt.get("rule", {}) or {}
-    agent     = archive_evt.get("agent", {}) or {}
-    predecoder = archive_evt.get("predecoder", {}) or {}
-    cloudtrail = archive_evt.get("cloudtrail", {}) or {}
+    """
+    Normalize raw AWS CloudTrail JSON TRỰC TIẾP (không qua pre-processor).
+    Input format thật: {"integration":"aws","aws":{...CloudTrail fields...}}
+    """
+    aws = archive_evt.get("aws") or {}
+    if not isinstance(aws, dict):
+        return None
 
-    aws_event   = data.get("aws_event", "")
-    aws_source  = data.get("aws_source", "")
-    aws_region  = data.get("aws_region", "")
-    aws_account = data.get("aws_account", "")
-    src_ip      = data.get("srcip", "")
-    user_name   = data.get("dstuser", "")
-    user_arn    = data.get("user_arn", "")
-    user_type   = data.get("user_type", "")
-    read_only   = data.get("read_only", "True")
-    error_code  = data.get("error_code", "")
+    event_name   = aws.get("eventName", "")
+    event_source = aws.get("eventSource", "")
+    event_time   = aws.get("eventTime") or archive_evt.get("timestamp", "")
+    if not event_name:
+        return None
 
-    # Classify action
-    if error_code:
+    region      = aws.get("awsRegion", "")
+    account_id  = aws.get("aws_account_id") or aws.get("recipientAccountId", "")
+    src_ip      = aws.get("sourceIPAddress") or aws.get("source_ip_address") or ""
+    user_agent  = aws.get("userAgent", "")
+    request_id  = aws.get("requestID") or aws.get("eventID", "")
+    error_code  = aws.get("errorCode", "")
+    error_msg   = aws.get("errorMessage", "")
+    read_only   = bool(aws.get("readOnly", True))
+    event_type  = aws.get("eventType", "")
+
+    user_identity = aws.get("userIdentity") or {}
+    user_type     = user_identity.get("type", "")
+    user_arn      = user_identity.get("arn", "")
+    principal_id  = user_identity.get("principalId", "")
+
+    # Ưu tiên lấy email/username thật từ principalId (ROLE_ID:email@domain.com)
+    user_name = ""
+    if ":" in principal_id:
+        candidate = principal_id.split(":", 1)[1]
+        if candidate:
+            user_name = candidate
+    if not user_name and user_arn and "/" in user_arn:
+        last_segment = user_arn.rsplit("/", 1)[-1]
+        if "@" in last_segment:
+            user_name = last_segment
+    role_name = ""
+    if "sessionContext" in user_identity:
+        role_name = user_identity["sessionContext"].get("sessionIssuer", {}).get("userName", "")
+    if not user_name:
+        user_name = role_name or user_identity.get("userName", "")
+    if not user_name and user_arn:
+        user_name = user_arn.split("/")[-1]
+
+    # MFA tracking
+    mfa_authenticated = "false"
+    if "sessionContext" in user_identity:
+        mfa_authenticated = str(
+            user_identity["sessionContext"].get("attributes", {}).get("mfaAuthenticated", "false")
+        ).lower()
+    additional_data = aws.get("additionalEventData", {}) or {}
+    if "MFAUsed" in additional_data:
+        mfa_authenticated = "true" if str(additional_data.get("MFAUsed")).lower() in ("yes", "true") else "false"
+
+    invoked_by = user_identity.get("invokedBy", "")
+    is_aws_service = (
+        src_ip in ("config.amazonaws.com", "cloudtrail.amazonaws.com",
+                   "s3.amazonaws.com", "lambda.amazonaws.com")
+        or invoked_by != ""
+    )
+
+    # Action + severity classification
+    if event_name == "ConsoleLogin" and user_type == "Root":
+        action = "console_login_root"
+        rule_level = 12
+    elif error_code:
         action = "api_error"
-    elif read_only in ("True", "true", True):
-        action = "api_read"
-    else:
+        rule_level = 8 if event_name in CLOUDTRAIL_HIGH_RISK_EVENTS else 5
+    elif event_name in CLOUDTRAIL_HIGH_RISK_EVENTS:
+        action = f"cloudtrail_{event_name.lower()}"
+        rule_level = 10
+    elif event_name in CLOUDTRAIL_MEDIUM_RISK_EVENTS:
+        action = f"cloudtrail_{event_name.lower()}"
+        rule_level = 5
+    elif not read_only:
         action = "api_write"
+        rule_level = 6
+    else:
+        action = "api_read"
+        rule_level = 3
 
-    # Source IP — AWS service calls dùng service name, không phải IP
+    outcome = "failure" if error_code else "success"
+    if event_name == "ConsoleLogin" and user_type == "Root" and mfa_authenticated != "true":
+        outcome = "critical"
+
     network_src_ip = src_ip if re.match(r'\d+\.\d+\.\d+\.\d+', src_ip) else ""
-    network_src_host = src_ip if not network_src_ip else ""
 
-    rule_level = rule.get("level", 3)
-    outcome = "unknown"
-    if rule_level >= 10: outcome = "critical"
-    elif rule_level >= 8: outcome = "failure"
-    elif rule_level >= 5: outcome = "warning"
-    elif rule_level >= 3: outcome = "success"
-
-    message = rule.get("description", f"CloudTrail: {aws_event}")
+    message = f"CloudTrail: {event_name} via {event_source} by {user_name or user_type}"
     if error_code:
-        message += f" [ERROR: {error_code}: {data.get('error_message', '')}]"
+        message += f" [ERROR: {error_code}]"
 
     return {
-        "time":           archive_evt.get("timestamp"),
+        "time":           event_time,
         "log_type":       "cloudtrail",
         "vendor":         "aws",
         "action":         action,
         "outcome":        outcome,
-        "asset_host":     f"aws-{aws_account}" if aws_account else agent.get("name", ""),
-        "correlation_id": data.get("request_id", ""),
+        "asset_host":     f"aws-{account_id}" if account_id else "",
+        "correlation_id": request_id,
         "network": {
             "source_ip":        network_src_ip,
             "source_port":      None,
@@ -581,34 +1028,59 @@ def normalize_cloudtrail_event(archive_evt: dict) -> Optional[dict]:
         "maliciousIP": None,
         "waf": "", "flow": "", "winEvent": "", "fortinet": "", "linuxEvent": "",
         "cloudtrailEvent": {
-            "eventName":    aws_event,
-            "eventSource":  aws_source,
-            "awsRegion":    aws_region,
-            "accountId":    aws_account,
+            "eventName":    event_name,
+            "eventSource":  event_source,
+            "eventType":    event_type,
+            "awsRegion":    region,
+            "accountId":    account_id,
             "userType":     user_type,
             "userName":     user_name,
+            "roleName":     role_name,
             "userArn":      user_arn,
             "sourceIP":     src_ip,
-            "readOnly":     read_only,
+            "userAgent":    user_agent,
+            "readOnly":     str(read_only),
             "errorCode":    error_code,
+            "errorMessage": error_msg,
+            "mfaAuthenticated": mfa_authenticated,
+            "invokedBy":    invoked_by,
+            "isAwsService": is_aws_service,
             "ruleLevel":    rule_level,
-            "ruleGroups":   rule.get("groups", []),
-            "ruleId":       rule.get("id", ""),
         },
     }
 
 
+CISCO_TEXT_RE = re.compile(r'%(?P<facility>[A-Z0-9_]+)-(?P<severity>\d)-(?P<mnemonic>[A-Z0-9_]+):\s*(?P<message>.*)')
+
+
 def normalize_cisco_event(archive_evt: dict) -> Optional[dict]:
-    """Cisco IOS syslog đã qua pre-processor → normalize về schema chuẩn."""
+    """Normalize Cisco IOS syslog — hỗ trợ cả raw text trực tiếp và pre-processed."""
     data      = archive_evt.get("data", {}) or {}
     rule      = archive_evt.get("rule", {}) or {}
     agent     = archive_evt.get("agent", {}) or {}
     predecoder = archive_evt.get("predecoder", {}) or {}
+    full_log_raw = archive_evt.get("full_log", "")
+
+    # Nếu chưa có data đã pre-processed → tự parse từ raw text
+    if not data.get("mnemonic") and full_log_raw:
+        m = CISCO_TEXT_RE.search(full_log_raw)
+        if m:
+            data = {
+                "facility": m.group("facility"),
+                "severity": m.group("severity"),
+                "mnemonic": m.group("mnemonic"),
+                "message":  m.group("message").strip(),
+            }
+            # Tìm IP thiết bị ở đầu dòng (syslog header)
+            ip_m = re.search(r'\b(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\b', full_log_raw[:60])
+            device_ip = ip_m.group(1) if ip_m else ""
+            agent = {"ip": device_ip, "name": device_ip}
+            predecoder = {"hostname": device_ip}
 
     facility = data.get("facility", "")
-    severity = int(data.get("severity", "5"))
+    severity = int(data.get("severity", "5") or "5")
     mnemonic = data.get("mnemonic", "")
-    message  = data.get("message", archive_evt.get("full_log", "")[:200])
+    message  = data.get("message", full_log_raw[:200] if full_log_raw else "")
     src_host = agent.get("ip") or agent.get("name") or predecoder.get("hostname", "")
 
     # Map Cisco severity → action
@@ -702,6 +1174,12 @@ def normalize_event(archive_evt: dict) -> Optional[dict]:
     if (isinstance(location, str) and location.startswith("/aws/cloudtrail/")) or decoder_name == "cloudtrail":
         return normalize_cloudtrail_event(archive_evt)
 
+    # CloudTrail raw trực tiếp (không qua pre-processor): {"integration":"aws","aws":{...}}
+    if isinstance(archive_evt.get("aws"), dict) and archive_evt["aws"].get("eventName"):
+        return normalize_cloudtrail_event(archive_evt)
+    if archive_evt.get("integration") == "aws" and isinstance(archive_evt.get("aws"), dict):
+        return normalize_cloudtrail_event(archive_evt)
+
     # Cisco IOS — đã qua pre-processor
     if (isinstance(location, str) and location.startswith("/cisco/")) or decoder_name == "cisco-ios":
         return normalize_cisco_event(archive_evt)
@@ -754,9 +1232,40 @@ def main():
         for line in follow_file(RAW_LOG_PATH, start_from_beginning=start_beginning):
             if not line.strip():
                 continue
+
+            # MSWinEventLog raw (syslog-forwarded, không phải JSON) — xử lý trước JSON parse
+            if "MSWinEventLog" in line and "\t" in line:
+                norm = normalize_windows_eventlog_direct(line)
+                if norm:
+                    out.write(json.dumps(norm, ensure_ascii=False) + "\n")
+                    out.flush()
+                    log_type = norm.get("log_type")
+                    mapped = TYPE_MAP.get(log_type)
+                    if mapped:
+                        stats[mapped] += 1
+                        total = sum(stats[k] for k in ("waf","vpc","windows","linux","fortinet","cloudtrail","cisco"))
+                        print(f"[normalize] +1 {log_type:10s} | total={total} (direct MSWinEventLog)")
+                    continue
+                else:
+                    stats["skipped"] += 1
+                    continue
+
             try:
                 evt = json.loads(line)
             except json.JSONDecodeError:
+                # Không phải JSON — thử các parser text trực tiếp
+                # (Cisco IOS, FortiGate, Linux syslog)
+                norm = route_text_line(line)
+                if norm:
+                    out.write(json.dumps(norm, ensure_ascii=False) + "\n")
+                    out.flush()
+                    log_type = norm.get("log_type")
+                    mapped = TYPE_MAP.get(log_type)
+                    if mapped:
+                        stats[mapped] += 1
+                        total = sum(stats[k] for k in ("waf","vpc","windows","linux","fortinet","cloudtrail","cisco"))
+                        print(f"[normalize] +1 {log_type:10s} | total={total} (direct text)")
+                    continue
                 stats["errors"] += 1
                 continue
             norm = normalize_event(evt)

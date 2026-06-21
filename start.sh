@@ -125,10 +125,6 @@ start_service() {
 # ── Khởi động từng service ────────────────────────────────────────
 header "Starting pipeline services"
 
-# 0. pre processor
-start_service "preprocessor" "${BASE_DIR}/pre-processor.py"
-sleep 1
-
 start_service "normalize" "${BASE_DIR}/normalize-service.py"
 # 1. Normalize
 sleep 1

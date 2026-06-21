@@ -98,8 +98,16 @@ class DedupService:
         elif log_type == "linux":
             linux = log.get("linuxEvent", {}) or {}
             prog  = linux.get("program", "")
-            user  = linux.get("user", "")
             rid   = linux.get("ruleID", "")
+            # Chỉ dùng "user" trong key cho các action thật sự liên quan auth/account
+            # (tránh nhiễu do extract_linux_user() bắt nhầm từ message text thường)
+            auth_related_actions = {
+                "ssh_login_success", "ssh_login_failed", "ssh_disconnect", "ssh_event",
+                "sudo_executed", "sudo_event", "user_created", "user_deleted",
+                "pam_auth_failed", "pam_session_opened", "pam_session_closed", "pam_event",
+                "cron_session_opened", "cron_session_closed", "session_opened",
+            }
+            user = linux.get("user", "") if action in auth_related_actions else ""
             return f"linux|{src_ip}|{host}|{action}|{prog}|{user}|{rid}"
 
         elif log_type == "win":
