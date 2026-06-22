@@ -40,94 +40,6 @@ def _format_correlation_line(event: Dict[str, Any]) -> str | None:
     )
 
 
-def _severity_emoji(severity: str) -> str:
-    return {
-        "critical": "🔴",
-        "high":     "🟠",
-        "medium":   "🟡",
-        "low":      "🟢",
-        "none":     "⚪",
-    }.get((severity or "").lower(), "⚪")
-
-
-def _format_enrichment_section(top_groups: list) -> list[str]:
-    """Tạo section enrichment IP cho Telegram message từ top_groups."""
-    lines = []
-    seen_ips = set()
-
-    for row in (top_groups or []):
-        mal = row.get("malicious_src")
-        src_ip = row.get("src_ip") or ""
-
-        # Hiển thị info cho mọi IP public (không chỉ malicious)
-        if not src_ip or src_ip in seen_ips:
-            continue
-        seen_ips.add(src_ip)
-
-        if not isinstance(mal, dict):
-            continue
-
-        score    = mal.get("confidence_score", 0)
-        severity = mal.get("threat_severity", "none")
-        is_mal   = mal.get("is_malicious", False)
-        is_tor   = mal.get("is_tor", False)
-        isp      = mal.get("isp", "")
-        country  = mal.get("country_name") or mal.get("country_code", "")
-        city     = mal.get("city", "")
-        asn      = mal.get("asn", "")
-        hostname = mal.get("hostname", "")
-        domain   = mal.get("domain", "")
-        usage    = mal.get("usage_type", "")
-        cats     = mal.get("categories", [])
-        reports  = mal.get("total_reports", 0)
-
-        otx_pulses  = mal.get("otx_pulse_count", 0)
-        otx_tags    = mal.get("otx_tags", [])
-        otx_malware = mal.get("otx_malware", [])
-        uh_count    = mal.get("urlhaus_count", 0)
-        tf_malware  = mal.get("threatfox_malware", [])
-
-        sev_icon = _severity_emoji(severity)
-        mal_flag = " ⚠️ MALICIOUS" if is_mal else ""
-        tor_flag = " 🧅 TOR" if is_tor else ""
-
-        lines.append(f"[IP] {src_ip}{mal_flag}{tor_flag}")
-        lines.append(f"  AbuseIPDB: score={score} | severity={severity} {sev_icon} | reports={reports}")
-
-        loc_parts = [p for p in [city, country] if p]
-        if loc_parts:
-            lines.append(f"  Location: {', '.join(loc_parts)}")
-        if isp:
-            isp_line = f"  ISP: {isp}"
-            if asn:
-                isp_line += f" | ASN: {asn}"
-            if usage:
-                isp_line += f" | Usage: {usage}"
-            lines.append(isp_line)
-        if hostname or domain:
-            lines.append(f"  Host: {hostname or domain}")
-        if cats:
-            lines.append(f"  Categories: {', '.join(cats[:3])}")
-
-        if otx_pulses > 0:
-            otx_line = f"  OTX: {otx_pulses} pulse(s)"
-            if otx_tags:
-                otx_line += f" | tags={', '.join(otx_tags[:3])}"
-            if otx_malware:
-                otx_line += f" | malware={', '.join(otx_malware[:2])}"
-            lines.append(otx_line)
-
-        tf_parts = []
-        if uh_count > 0:
-            tf_parts.append(f"URLhaus={uh_count} URLs")
-        if tf_malware:
-            tf_parts.append(f"ThreatFox={', '.join(tf_malware[:2])}")
-        if tf_parts:
-            lines.append(f"  ThreatFeed: {' | '.join(tf_parts)}")
-
-    return lines
-
-
 def format_telegram_message(alert: Alert) -> str:
     analysis = alert.analysis
     event = alert.event
@@ -137,9 +49,8 @@ def format_telegram_message(alert: Alert) -> str:
     request_usage = usage.get("request") if isinstance(usage, dict) else {}
     daily_usage = usage.get("daily") if isinstance(usage, dict) else {}
 
-    sev_icon = _severity_emoji(analysis.severity)
     lines = [
-        f"{sev_icon} ALERT {analysis.severity.upper()} {analysis.confidence}% {sev_icon}",
+        f"ALERT {analysis.severity.upper()} {analysis.confidence}%",
         analysis.title,
         f"Category: {analysis.category}",
     ]
@@ -164,13 +75,6 @@ def format_telegram_message(alert: Alert) -> str:
         dst_ip = event.get("dst_ip") or "-"
         log_type = event.get("log_type") or "-"
         lines.append(f"Event: src={src_ip} dst={dst_ip} type={log_type}")
-
-    # ── Enrichment section ────────────────────────────────────────────────────
-    top_groups = event.get("top_groups") or []
-    enrichment_lines = _format_enrichment_section(top_groups)
-    if enrichment_lines:
-        lines.append("── Threat Intel ──")
-        lines.extend(enrichment_lines)
 
     if isinstance(request_usage, dict):
         lines.append(

@@ -205,79 +205,18 @@ def build_window_summary(batch: WindowBatch, configured_window_seconds: int) -> 
         if dst_ip:
             destination_counts[str(dst_ip)] += weight
 
-        # Extract enrichment data từ enrichments dict (enricher v2) + backward-compat maliciousIP
-        enrichments = sample_event.get("enrichments") or {}
-        mal_ip      = sample_event.get("maliciousIP")
-        mal_info    = None
-
-        # Ưu tiên enrichments dict mới (đầy đủ hơn)
-        # Tìm IP nguồn trong enrichments trước
-        _src_candidate = data.get("src_ip") or network.get("source_ip") or ""
-        _enrich_rec = enrichments.get(_src_candidate) if _src_candidate else None
-
-        # Nếu không tìm được theo src_ip, lấy bất kỳ record nào is_malicious=True
-        if not _enrich_rec:
-            for _ip_key, _rec in enrichments.items():
-                if isinstance(_rec, dict) and _rec.get("confidence_score", 0) > 0:
-                    _enrich_rec = _rec
-                    break
-
-        if isinstance(_enrich_rec, dict) and _enrich_rec.get("confidence_score", 0) >= 0:
-            otx = _enrich_rec.get("otx_context") or {}
-            tf  = _enrich_rec.get("threat_feed_context") or {}
-            mal_info = {
-                "confidence_score":  _enrich_rec.get("confidence_score", 0),
-                "is_malicious":      bool(_enrich_rec.get("is_malicious")),
-                "threat_severity":   _enrich_rec.get("threat_severity", "none"),
-                "reputation":        _enrich_rec.get("reputation", "benign"),
-                "isp":               _enrich_rec.get("isp", ""),
-                "asn":               _enrich_rec.get("asn", ""),
-                "country_code":      _enrich_rec.get("country", ""),
-                "country_name":      _enrich_rec.get("country_name", ""),
-                "city":              _enrich_rec.get("city", ""),
-                "usage_type":        _enrich_rec.get("usage_type", ""),
-                "hostname":          _enrich_rec.get("hostname", ""),
-                "domain":            _enrich_rec.get("domain", ""),
-                "categories":        [_enrich_rec.get("category", "")] if _enrich_rec.get("category","") not in ("","clean") else [],
-                "is_tor":            bool(_enrich_rec.get("is_tor")),
-                "is_whitelisted":    bool(_enrich_rec.get("is_whitelisted")),
-                "total_reports":     _enrich_rec.get("total_reports", 0),
-                "source":            "abuseipdb",
-                # OTX context
-                "otx_pulse_count":   otx.get("pulse_count", 0),
-                "otx_tags":          otx.get("tags", [])[:5],
-                "otx_malware":       otx.get("malware_families", [])[:3],
-                # ThreatFeed context
-                "urlhaus_count":     tf.get("urlhaus_url_count", 0),
-                "urlhaus_tags":      tf.get("urlhaus_tags", [])[:3],
-                "threatfox_malware": tf.get("threatfox_malware", [])[:3],
-            }
-        elif isinstance(mal_ip, dict) and mal_ip.get("confidence_score", 0) > 0:
-            # Fallback backward-compat
+        # Extract maliciousIP from sample_event for threat intel context
+        mal_ip = sample_event.get("maliciousIP")
+        mal_info = None
+        if isinstance(mal_ip, dict) and mal_ip.get("confidence_score", 0) > 0:
             mal_info = {
                 "confidence_score": mal_ip.get("confidence_score"),
-                "is_malicious":     True,
-                "threat_severity":  "high" if mal_ip.get("confidence_score",0) >= 75 else "medium",
-                "reputation":       "malicious",
                 "isp":              mal_ip.get("isp", ""),
-                "asn":              "",
                 "country_code":     mal_ip.get("country_code", ""),
-                "country_name":     "",
-                "city":             "",
-                "usage_type":       "",
-                "hostname":         "",
-                "domain":           "",
                 "categories":       mal_ip.get("categories", []),
                 "is_tor":           bool(mal_ip.get("is_tor")),
-                "is_whitelisted":   False,
                 "total_reports":    mal_ip.get("total_reports", 0),
                 "source":           mal_ip.get("source", "abuseipdb"),
-                "otx_pulse_count":  0,
-                "otx_tags":         [],
-                "otx_malware":      [],
-                "urlhaus_count":    0,
-                "urlhaus_tags":     [],
-                "threatfox_malware": [],
             }
 
         row = {
