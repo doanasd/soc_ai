@@ -691,6 +691,19 @@ def build_enrichment_record(
             "threatfox_malware": threatfeed_data.get("threatfox_malware", []),
         }
 
+    # VirusTotal placeholder — để trống cho đến khi có API key trả phí
+    # Schema chuẩn bị sẵn để sau này điền vào không cần sửa downstream
+    record["virustotal_context"] = {
+        "enabled":          False,
+        "detection_ratio":  None,   # vd: "12/94" (detected/total engines)
+        "malicious_count":  None,   # số engine phát hiện malicious
+        "suspicious_count": None,
+        "last_analysis":    None,   # ISO timestamp lần quét gần nhất
+        "categories":       [],     # vd: ["malware", "phishing"]
+        "tags":             [],     # vd: ["trojan", "c2"]
+        "community_score":  None,   # VT community reputation score
+    }
+
     return record
 
 
