@@ -709,16 +709,69 @@ def _parse_win_syslog_timestamp(month: str, day: str, time_str: str) -> str:
         return now.isoformat().replace("+00:00", "Z")
 
 
+def _is_valid_ip(ip: str) -> bool:
+    """
+    Kiểm tra IP hợp lệ: mỗi octet 0-255, không phải version number.
+    Version number pattern: tất cả octets <= 9 VÀ không phải private range.
+    Private ranges (10.x, 172.16-31.x, 192.168.x) luôn valid.
+    Loopback 127.x luôn valid.
+    """
+    try:
+        parts = ip.split(".")
+        if len(parts) != 4:
+            return False
+        octets = [int(p) for p in parts]
+        if not all(0 <= o <= 255 for o in octets):
+            return False
+        first = octets[0]
+        # Private/loopback ranges — luôn valid, không bao giờ là version number
+        if first == 10:    return True   # 10.0.0.0/8
+        if first == 127:   return True   # loopback
+        if first == 172 and 16 <= octets[1] <= 31: return True  # 172.16-31.x
+        if first == 192 and octets[1] == 168:      return True  # 192.168.x
+        # Public IP: version number thường có tất cả octets rất nhỏ (< 10)
+        # VD: 2.6.3.0, 1.0.0.0, 4.2.1.0 — reject nếu max octet < 10
+        if max(octets) < 10:
+            return False
+        return True
+    except (ValueError, AttributeError):
+        return False
+
+
 def extract_win_ip_from_message(message: str) -> str:
-    """Tìm IP trong message text — thường ở dạng 'Source Network Address: x.x.x.x'."""
+    """
+    Tìm IP trong Windows Event message.
+    Chỉ bắt IP từ context keywords rõ ràng để tránh nhầm version number,
+    port number, hay các chuỗi x.x.x.x khác trong message.
+    """
+    if not message:
+        return ""
+
+    # Ưu tiên: IP đi kèm keyword rõ ràng
     m = re.search(
-        r'(?:Source Network Address|IP Address|Network Address|Caller Computer Name):\s*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})',
+        r'(?:Source Network Address|Source IP|IP Address|Network Address|'
+        r'Client Address|Caller IP|Workstation IP|Source Host)\s*[=:]\s*'
+        r'(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})',
         message, re.I
     )
     if m:
-        return m.group(1)
-    m2 = re.search(r'\b(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\b', message)
-    return m2.group(1) if m2 else ""
+        ip = m.group(1)
+        if _is_valid_ip(ip):
+            return ip
+
+    # Fallback: tìm IP standalone nhưng chỉ khi không nằm trong context version/port
+    # Loại bỏ: "Version=x.x.x.x", "v2.6.3.0", ":port" patterns
+    clean_msg = re.sub(
+        r'(?:Version|ClientVersion|AppVersion|v)\s*[=:]?\s*\d+\.\d+\.\d+\.\d+',
+        '', message, flags=re.I
+    )
+    m2 = re.search(r'\b(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\b', clean_msg)
+    if m2:
+        ip = m2.group(1)
+        if _is_valid_ip(ip):
+            return ip
+
+    return ""
 
 
 def extract_win_user_from_message(message: str) -> str:
@@ -780,6 +833,19 @@ WIN_EVENTID_ACTION_MAP = {
     "5152": "packet_blocked",
     "5156": "connection_allowed",
     "5158": "bind_allowed",
+    # ── Security: Audit Policy ───────────────────────────────────────────────
+    "4904": "security_event_source_registered",
+    "4905": "security_event_source_unregistered",
+    "4906": "crashondumpaction_changed",
+    "4907": "auditing_settings_changed",
+    "4908": "special_groups_logon_table_modified",
+    # ── VSS / Shadow Copy ────────────────────────────────────────────────────
+    "8193": "vss_error",
+    "8194": "vss_writer_error",
+    "8224": "vss_idle_shutdown",
+    # ── Certificate Services ─────────────────────────────────────────────────
+    "64":   "certificate_expiring",
+    "65":   "certificate_renewed",
     # ── Security: System ────────────────────────────────────────────────────
     "4608": "windows_starting",
     "4609": "windows_shutting_down",
