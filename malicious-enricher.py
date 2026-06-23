@@ -333,7 +333,7 @@ def call_abuseipdb(ip: str) -> Optional[dict]:
     url = f"{ABUSEIPDB_URL}?ipAddress={ip}&maxAgeInDays={MAX_AGE_DAYS_QUERY}&verbose"
     req = urllib.request.Request(url, headers={"Key": ABUSEIPDB_API_KEY, "Accept": "application/json"})
     try:
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with urllib.request.urlopen(req, timeout=int(os.getenv("OTX_TIMEOUT", "20"))) as resp:
             d = json.loads(resp.read().decode()).get("data", {})
         score     = int(d.get("abuseConfidenceScore", 0))
         reports   = d.get("reports", [])
@@ -426,7 +426,7 @@ def call_otx(ip: str) -> Optional[dict]:
     url = OTX_URL_TEMPLATE.format(ip=ip)
     req = urllib.request.Request(url, headers={"X-OTX-API-KEY": OTX_API_KEY})
     try:
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with urllib.request.urlopen(req, timeout=int(os.getenv("OTX_TIMEOUT", "20"))) as resp:
             d = json.loads(resp.read().decode())
 
         pulse_info = d.get("pulse_info", {}) or {}
@@ -477,6 +477,9 @@ def call_otx(ip: str) -> Optional[dict]:
         return None
 
 
+OTX_LIVE_ENABLED = os.getenv("OTX_LIVE_CALLS_ENABLED", "true").lower() == "true"
+
+
 def lookup_otx(conn, ip: str, stats: dict) -> Optional[dict]:
     cached = get_cached(conn, "otx_indicators", ip)
     if cached:
@@ -484,7 +487,8 @@ def lookup_otx(conn, ip: str, stats: dict) -> Optional[dict]:
         return cached
 
     stats["otx_cache_misses"] += 1
-    if not OTX_API_KEY:
+    if not OTX_API_KEY or not OTX_LIVE_ENABLED:
+        # Live calls disabled — chỉ dùng cache, không block pipeline
         return None
 
     result = call_otx(ip)
@@ -519,7 +523,7 @@ def call_urlhaus(ip: str) -> dict:
             data=f"host={ip}".encode(),
             headers={"Content-Type": "application/x-www-form-urlencoded"},
         )
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with urllib.request.urlopen(req, timeout=int(os.getenv("OTX_TIMEOUT", "20"))) as resp:
             d = json.loads(resp.read().decode())
 
         if d.get("query_status") != "ok":
@@ -549,7 +553,7 @@ def call_threatfox(ip: str) -> dict:
             THREATFOX_API_URL, data=payload,
             headers={"Content-Type": "application/json"},
         )
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        with urllib.request.urlopen(req, timeout=int(os.getenv("OTX_TIMEOUT", "20"))) as resp:
             d = json.loads(resp.read().decode())
 
         if d.get("query_status") != "ok":
