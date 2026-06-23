@@ -143,6 +143,7 @@ def init_abuseipdb_db(db_path: str) -> sqlite3.Connection:
             categories       TEXT DEFAULT '[]',
             is_whitelisted   INTEGER DEFAULT 0,
             is_tor           INTEGER DEFAULT 0,
+            timezone         TEXT DEFAULT '',
             fetch_status     TEXT DEFAULT 'ok',
             fetched_at       TEXT NOT NULL,
             expires_at       TEXT NOT NULL
@@ -231,8 +232,8 @@ def save_abuseipdb_cache(conn, ip: str, data: dict, ttl_seconds: int):
         INSERT INTO ip_reputation
             (ip,score,country_code,country_name,city,isp,asn,usage_type,domain,
              hostnames,total_reports,num_distinct_users,last_reported,categories,
-             is_whitelisted,is_tor,fetch_status,fetched_at,expires_at)
-        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+             is_whitelisted,is_tor,fetch_status,timezone,fetched_at,expires_at)
+        VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
         ON CONFLICT(ip) DO UPDATE SET
             score=excluded.score, country_code=excluded.country_code,
             country_name=excluded.country_name, city=excluded.city,
@@ -243,7 +244,8 @@ def save_abuseipdb_cache(conn, ip: str, data: dict, ttl_seconds: int):
             last_reported=excluded.last_reported, categories=excluded.categories,
             is_whitelisted=excluded.is_whitelisted, is_tor=excluded.is_tor,
             fetch_status=excluded.fetch_status, fetched_at=excluded.fetched_at,
-            expires_at=excluded.expires_at
+            expires_at=excluded.expires_at,
+            timezone=excluded.timezone
     """, (
         ip, data.get("score",0), data.get("country_code",""), data.get("country_name",""),
         data.get("city",""), data.get("isp",""), data.get("asn",""),
@@ -254,6 +256,7 @@ def save_abuseipdb_cache(conn, ip: str, data: dict, ttl_seconds: int):
         1 if data.get("is_whitelisted") else 0,
         1 if data.get("is_tor") else 0,
         data.get("fetch_status","ok"),
+        data.get("timezone",""),
         now.isoformat(), expires_at,
     ))
     conn.commit()
@@ -273,7 +276,8 @@ def save_otx_cache(conn, ip: str, data: dict, ttl_seconds: int):
             country=excluded.country, asn=excluded.asn,
             reputation_raw=excluded.reputation_raw,
             fetch_status=excluded.fetch_status, fetched_at=excluded.fetched_at,
-            expires_at=excluded.expires_at
+            expires_at=excluded.expires_at,
+            timezone=excluded.timezone
     """, (
         ip, data.get("pulse_count",0), json.dumps(data.get("pulse_names",[])),
         json.dumps(data.get("tags",[])), json.dumps(data.get("malware_families",[])),
@@ -297,7 +301,8 @@ def save_threat_feeds_cache(conn, ip: str, data: dict, ttl_seconds: int):
             threatfox_malware=excluded.threatfox_malware,
             threatfox_confidence=excluded.threatfox_confidence,
             fetch_status=excluded.fetch_status, fetched_at=excluded.fetched_at,
-            expires_at=excluded.expires_at
+            expires_at=excluded.expires_at,
+            timezone=excluded.timezone
     """, (
         ip, data.get("urlhaus_url_count",0), json.dumps(data.get("urlhaus_tags",[])),
         data.get("urlhaus_status",""), json.dumps(data.get("threatfox_malware",[])),
@@ -325,6 +330,54 @@ ABUSE_CATEGORIES = {
     18:"Brute_Force",19:"Bad_Web_Bot",20:"Exploited_Host",21:"Web_App_Attack",
     22:"SSH_Brute_Force",23:"IoT_Targeted",
 }
+
+
+IPINFO_URL = "https://ipinfo.io/{ip}/json"
+
+
+def call_ipinfo(ip: str) -> Optional[dict]:
+    """
+    IPInfo API (no key required, 1000 req/day free).
+    Bổ sung city, ASN, timezone, coordinates mà AbuseIPDB không trả về.
+    """
+    url = IPINFO_URL.format(ip=ip)
+    try:
+        req = urllib.request.Request(url, headers={"Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            d = json.loads(resp.read().decode())
+
+        # Parse org field: "AS16509 Amazon.com, Inc." → asn="AS16509", org_name="Amazon.com, Inc."
+        org_raw = d.get("org", "") or ""
+        asn, org_name = "", ""
+        if org_raw:
+            parts = org_raw.split(" ", 1)
+            if parts[0].startswith("AS") and parts[0][2:].isdigit():
+                asn = parts[0]
+                org_name = parts[1] if len(parts) > 1 else ""
+            else:
+                org_name = org_raw
+
+        # Parse loc: "1.2897,103.8501"
+        loc = d.get("loc", "") or ""
+        lat, lon = "", ""
+        if "," in loc:
+            lat, lon = loc.split(",", 1)
+
+        return {
+            "city":     d.get("city", "") or "",
+            "region":   d.get("region", "") or "",
+            "country":  d.get("country", "") or "",
+            "asn":      asn,
+            "org":      org_name,
+            "hostname": d.get("hostname", "") or "",
+            "timezone": d.get("timezone", "") or "",
+            "postal":   d.get("postal", "") or "",
+            "lat":      lat,
+            "lon":      lon,
+        }
+    except Exception as e:
+        logger.debug(f"IPInfo error for {ip}: {e}")
+        return None
 
 
 def call_abuseipdb(ip: str) -> Optional[dict]:
@@ -406,6 +459,18 @@ def lookup_abuseipdb(conn, ip: str, stats: dict) -> Optional[dict]:
         save_abuseipdb_cache(conn, ip, error_rec, TTL_ERROR)
         stats["abuseipdb_api_errors"] += 1
         return None
+
+    # Bổ sung city/ASN từ IPInfo nếu AbuseIPDB không trả về
+    if not result.get("city") or not result.get("asn"):
+        ipinfo = call_ipinfo(ip)
+        if ipinfo:
+            if not result.get("city"):
+                result["city"] = ipinfo.get("city", "")
+            if not result.get("asn"):
+                result["asn"] = ipinfo.get("asn", "")
+            # Bổ sung thêm timezone nếu chưa có
+            if not result.get("timezone"):
+                result["timezone"] = ipinfo.get("timezone", "")
 
     save_abuseipdb_cache(conn, ip, result, get_abuseipdb_ttl(result["score"]))
     stats["abuseipdb_api_calls"] += 1
@@ -669,6 +734,7 @@ def build_enrichment_record(
         "country":           abuse_data.get("country_code", "") if abuse_data else "",
         "country_name":      abuse_data.get("country_name", "") if abuse_data else "",
         "city":              abuse_data.get("city", "") if abuse_data else "",
+        "timezone":          abuse_data.get("timezone", "") if abuse_data else "",
         "usage_type":        abuse_data.get("usage_type", "") if abuse_data else "",
         "is_tor":            bool(abuse_data.get("is_tor")) if abuse_data else False,
         "is_whitelisted":    is_wl,
