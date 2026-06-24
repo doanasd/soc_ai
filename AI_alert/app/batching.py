@@ -302,7 +302,13 @@ def build_window_summary(batch: WindowBatch, configured_window_seconds: int) -> 
         if _is_public_ip(src_ip) and _is_private_ip(dst_ip) and _is_sensitive_port(dst_port):
             external_sensitive_rows.append(row)
 
-    grouped_rows.sort(key=lambda item: item["count"], reverse=True)
+    # Sort: malicious IP lên đầu, sau đó theo count
+    def sort_key(item):
+        mal = item.get("malicious_src") or {}
+        is_mal = 1 if mal.get("is_malicious") else 0
+        score = mal.get("confidence_score", 0) or 0
+        return (is_mal, score, item["count"])
+    grouped_rows.sort(key=sort_key, reverse=True)
     external_sensitive_rows.sort(key=lambda item: item["count"], reverse=True)
 
     dominant_log_type = log_type_counts.most_common(1)[0][0]
@@ -341,7 +347,7 @@ def build_window_summary(batch: WindowBatch, configured_window_seconds: int) -> 
             {"ip": ip, "count": count}
             for ip, count in destination_counts.most_common(10)
         ],
-        "top_groups": grouped_rows[:12],
+        "top_groups": grouped_rows[:25],
         "notable_patterns": {
             "external_to_private_sensitive": external_sensitive_rows[:10],
         },
