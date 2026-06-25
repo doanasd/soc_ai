@@ -1,0 +1,10 @@
+# Model Usage Cost Report
+# Rates USD per 1M tokens: input=0.590000 cached_input=0.000000 output=0.790000
+
+# Daily Totals
+DAY	2026-06-24	calls=3	successful_calls=3	failed_calls=0	prompt_tokens=16123	cached_tokens=0	completion_tokens=572	total_tokens=16695	input_cost_usd=0.00951257	cached_input_cost_usd=0.00000000	output_cost_usd=0.00045188	total_cost_usd=0.00996445
+
+# Call History
+CALL	2026-06-24T06:45:01.816133Z	model=llama-3.3-70b-versatile	status=success	http_status=200	prompt_tokens=5375	cached_tokens=0	completion_tokens=197	total_tokens=5572	input_cost_usd=0.00317125	cached_input_cost_usd=0.00000000	output_cost_usd=0.00015563	total_cost_usd=0.00332688
+CALL	2026-06-24T06:50:52.387498Z	model=llama-3.3-70b-versatile	status=success	http_status=200	prompt_tokens=5374	cached_tokens=0	completion_tokens=191	total_tokens=5565	input_cost_usd=0.00317066	cached_input_cost_usd=0.00000000	output_cost_usd=0.00015089	total_cost_usd=0.00332155
+CALL	2026-06-24T06:54:47.386598Z	model=llama-3.3-70b-versatile	status=success	http_status=200	prompt_tokens=5374	cached_tokens=0	completion_tokens=184	total_tokens=5558	input_cost_usd=0.00317066	cached_input_cost_usd=0.00000000	output_cost_usd=0.00014536	total_cost_usd=0.00331602

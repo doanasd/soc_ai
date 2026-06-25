@@ -1,0 +1,1829 @@
+[normalize] Starting...
+[normalize] Input:  /home/ubuntu/soc_ai/raw_sample.json
+[normalize] Output: /home/ubuntu/soc_ai/log_normalized.json
+[normalize] Start position: beginning
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=1 CS=0 | total=1
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=2 CS=0 | total=2
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=3 CS=0 | total=3
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=4 CS=0 | total=4
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=5 CS=0 | total=5
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=6 CS=0 | total=6
+[normalize] +1 linux      | total=7 (direct text)
+[normalize] +1 linux      | total=8 (direct text)
+[normalize] +1 linux      | total=9 (direct text)
+[normalize] +1 linux      | total=10 (direct text)
+[normalize] +1 linux      | total=11 (direct text)
+[normalize] +1 linux      | total=12 (direct text)
+[normalize] +1 linux      | total=13 (direct text)
+[normalize] +1 linux      | total=14 (direct text)
+[normalize] +1 linux      | total=15 (direct text)
+[normalize] +1 cisco      | total=16 (direct text)
+[normalize] +1 cisco      | total=17 (direct text)
+[normalize] +1 cisco      | total=18 (direct text)
+[normalize] +1 fortinet   | total=19 (direct text)
+[normalize] +1 fortinet   | total=20 (direct text)
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=7 CS=3 | total=21
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=8 CS=3 | total=22
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=9 CS=3 | total=23
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=10 CS=3 | total=24
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=11 CS=3 | total=25
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=12 CS=3 | total=26
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=13 CS=3 | total=27
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=14 CS=3 | total=28
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=15 CS=3 | total=29
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=16 CS=3 | total=30
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=17 CS=3 | total=31
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=18 CS=3 | total=32
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=19 CS=3 | total=33
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=20 CS=3 | total=34
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=21 CS=3 | total=35
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=22 CS=3 | total=36
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=23 CS=3 | total=37
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=24 CS=3 | total=38
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=25 CS=3 | total=39
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=26 CS=3 | total=40
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=27 CS=3 | total=41
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=28 CS=3 | total=42
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=29 CS=3 | total=43
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=30 CS=3 | total=44
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=31 CS=3 | total=45
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=32 CS=3 | total=46
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=33 CS=3 | total=47
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=34 CS=3 | total=48
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=35 CS=3 | total=49
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=36 CS=3 | total=50
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=37 CS=3 | total=51
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=9 FTN=2 CT=38 CS=3 | total=52
+Traceback (most recent call last):
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1293, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1238, in main
+    norm = normalize_windows_eventlog_direct(line)
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 734, in normalize_windows_eventlog_direct
+    m = MSWINEVENTLOG_DIRECT_RE.match(line.strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MSWINEVENTLOG_DIRECT_RE' is not defined
+[normalize] Starting...
+[normalize] Input:  /home/ubuntu/soc_ai/raw_sample.json
+[normalize] Output: /home/ubuntu/soc_ai/log_normalized.json
+[normalize] Start position: beginning
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=1 CS=0 | total=1
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=2 CS=0 | total=2
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=3 CS=0 | total=3
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=4 CS=0 | total=4
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=5 CS=0 | total=5
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=6 CS=0 | total=6
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=7 CS=0 | total=7
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=8 CS=0 | total=8
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=9 CS=0 | total=9
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=10 CS=0 | total=10
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=11 CS=0 | total=11
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=12 CS=0 | total=12
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=13 CS=0 | total=13
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=14 CS=0 | total=14
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=15 CS=0 | total=15
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=16 CS=0 | total=16
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=17 CS=0 | total=17
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=18 CS=0 | total=18
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=19 CS=0 | total=19
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=20 CS=0 | total=20
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=21 CS=0 | total=21
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=22 CS=0 | total=22
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=23 CS=0 | total=23
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=24 CS=0 | total=24
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=25 CS=0 | total=25
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=26 CS=0 | total=26
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=27 CS=0 | total=27
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=28 CS=0 | total=28
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=29 CS=0 | total=29
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=30 CS=0 | total=30
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=31 CS=0 | total=31
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=32 CS=0 | total=32
+Traceback (most recent call last):
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1293, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1238, in main
+    norm = normalize_windows_eventlog_direct(line)
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 734, in normalize_windows_eventlog_direct
+    m = MSWINEVENTLOG_DIRECT_RE.match(line.strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MSWINEVENTLOG_DIRECT_RE' is not defined
+[normalize] Starting...
+[normalize] Input:  /home/ubuntu/soc_ai/raw_sample.json
+[normalize] Output: /home/ubuntu/soc_ai/log_normalized.json
+[normalize] Start position: beginning
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=1 CS=0 | total=1
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=2 CS=0 | total=2
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=3 CS=0 | total=3
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=4 CS=0 | total=4
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=5 CS=0 | total=5
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=6 CS=0 | total=6
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=7 CS=0 | total=7
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=8 CS=0 | total=8
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=9 CS=0 | total=9
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=10 CS=0 | total=10
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=11 CS=0 | total=11
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=12 CS=0 | total=12
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=13 CS=0 | total=13
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=14 CS=0 | total=14
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=15 CS=0 | total=15
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=16 CS=0 | total=16
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=17 CS=0 | total=17
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=18 CS=0 | total=18
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=19 CS=0 | total=19
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=20 CS=0 | total=20
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=21 CS=0 | total=21
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=22 CS=0 | total=22
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=23 CS=0 | total=23
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=24 CS=0 | total=24
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=25 CS=0 | total=25
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=26 CS=0 | total=26
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=27 CS=0 | total=27
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=28 CS=0 | total=28
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=29 CS=0 | total=29
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=30 CS=0 | total=30
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=31 CS=0 | total=31
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=0 FTN=0 CT=32 CS=0 | total=32
+Traceback (most recent call last):
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1293, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1238, in main
+    norm = normalize_windows_eventlog_direct(line)
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 734, in normalize_windows_eventlog_direct
+    m = MSWINEVENTLOG_DIRECT_RE.match(line.strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MSWINEVENTLOG_DIRECT_RE' is not defined
+[normalize] Starting...
+[normalize] Input:  /home/ubuntu/soc_ai/raw_sample.json
+[normalize] Output: /home/ubuntu/soc_ai/log_normalized.json
+[normalize] Start position: beginning
+[normalize] Offset: reading from beginning (test mode)
+[normalize] +1 linux      | total=1 (direct text)
+[normalize] +1 linux      | total=2 (direct text)
+[normalize] +1 linux      | total=3 (direct text)
+[normalize] +1 linux      | total=4 (direct text)
+[normalize] +1 linux      | total=5 (direct text)
+[normalize] +1 linux      | total=6 (direct text)
+[normalize] +1 linux      | total=7 (direct text)
+[normalize] +1 linux      | total=8 (direct text)
+[normalize] +1 linux      | total=9 (direct text)
+[normalize] +1 linux      | total=10 (direct text)
+[normalize] +1 linux      | total=11 (direct text)
+[normalize] +1 linux      | total=12 (direct text)
+[normalize] +1 linux      | total=13 (direct text)
+[normalize] +1 linux      | total=14 (direct text)
+[normalize] +1 linux      | total=15 (direct text)
+[normalize] +1 linux      | total=16 (direct text)
+[normalize] +1 linux      | total=17 (direct text)
+[normalize] +1 linux      | total=18 (direct text)
+[normalize] +1 linux      | total=19 (direct text)
+[normalize] +1 linux      | total=20 (direct text)
+[normalize] +1 linux      | total=21 (direct text)
+[normalize] +1 linux      | total=22 (direct text)
+[normalize] +1 linux      | total=23 (direct text)
+[normalize] +1 linux      | total=24 (direct text)
+[normalize] +1 linux      | total=25 (direct text)
+[normalize] +1 linux      | total=26 (direct text)
+[normalize] +1 linux      | total=27 (direct text)
+[normalize] +1 linux      | total=28 (direct text)
+[normalize] +1 linux      | total=29 (direct text)
+[normalize] +1 linux      | total=30 (direct text)
+[normalize] +1 linux      | total=31 (direct text)
+[normalize] +1 linux      | total=32 (direct text)
+[normalize] +1 linux      | total=33 (direct text)
+[normalize] +1 linux      | total=34 (direct text)
+[normalize] +1 linux      | total=35 (direct text)
+[normalize] +1 linux      | total=36 (direct text)
+[normalize] +1 linux      | total=37 (direct text)
+[normalize] +1 linux      | total=38 (direct text)
+[normalize] +1 linux      | total=39 (direct text)
+[normalize] +1 linux      | total=40 (direct text)
+[normalize] +1 linux      | total=41 (direct text)
+[normalize] +1 linux      | total=42 (direct text)
+[normalize] +1 linux      | total=43 (direct text)
+[normalize] +1 linux      | total=44 (direct text)
+[normalize] +1 linux      | total=45 (direct text)
+[normalize] +1 linux      | total=46 (direct text)
+[normalize] +1 linux      | total=47 (direct text)
+[normalize] +1 linux      | total=48 (direct text)
+[normalize] +1 linux      | total=49 (direct text)
+[normalize] +1 linux      | total=50 (direct text)
+[normalize] +1 linux      | total=51 (direct text)
+[normalize] +1 linux      | total=52 (direct text)
+[normalize] +1 linux      | total=53 (direct text)
+[normalize] +1 linux      | total=54 (direct text)
+[normalize] +1 linux      | total=55 (direct text)
+[normalize] +1 linux      | total=56 (direct text)
+[normalize] +1 linux      | total=57 (direct text)
+[normalize] +1 linux      | total=58 (direct text)
+[normalize] +1 linux      | total=59 (direct text)
+[normalize] +1 linux      | total=60 (direct text)
+[normalize] +1 linux      | total=61 (direct text)
+[normalize] +1 linux      | total=62 (direct text)
+[normalize] +1 linux      | total=63 (direct text)
+[normalize] +1 linux      | total=64 (direct text)
+[normalize] +1 linux      | total=65 (direct text)
+[normalize] +1 linux      | total=66 (direct text)
+[normalize] +1 linux      | total=67 (direct text)
+[normalize] +1 linux      | total=68 (direct text)
+[normalize] +1 linux      | total=69 (direct text)
+[normalize] +1 linux      | total=70 (direct text)
+[normalize] +1 linux      | total=71 (direct text)
+[normalize] +1 linux      | total=72 (direct text)
+[normalize] +1 linux      | total=73 (direct text)
+[normalize] +1 linux      | total=74 (direct text)
+[normalize] +1 linux      | total=75 (direct text)
+[normalize] Offset: file truncated (0 < 10589), resetting
+[normalize] +1 linux      | total=76 (direct text)
+[normalize] +1 linux      | total=77 (direct text)
+[normalize] +1 linux      | total=78 (direct text)
+[normalize] +1 linux      | total=79 (direct text)
+[normalize] +1 linux      | total=80 (direct text)
+[normalize] +1 linux      | total=81 (direct text)
+[normalize] +1 linux      | total=82 (direct text)
+[normalize] +1 linux      | total=83 (direct text)
+[normalize] +1 linux      | total=84 (direct text)
+[normalize] +1 linux      | total=85 (direct text)
+[normalize] +1 linux      | total=86 (direct text)
+[normalize] +1 linux      | total=87 (direct text)
+[normalize] +1 linux      | total=88 (direct text)
+[normalize] +1 linux      | total=89 (direct text)
+[normalize] +1 linux      | total=90 (direct text)
+[normalize] +1 linux      | total=91 (direct text)
+[normalize] +1 linux      | total=92 (direct text)
+[normalize] +1 linux      | total=93 (direct text)
+[normalize] +1 linux      | total=94 (direct text)
+[normalize] +1 linux      | total=95 (direct text)
+[normalize] +1 linux      | total=96 (direct text)
+[normalize] +1 linux      | total=97 (direct text)
+[normalize] +1 linux      | total=98 (direct text)
+[normalize] +1 linux      | total=99 (direct text)
+[normalize] +1 linux      | total=100 (direct text)
+[normalize] +1 linux      | total=101 (direct text)
+[normalize] +1 linux      | total=102 (direct text)
+[normalize] +1 linux      | total=103 (direct text)
+[normalize] +1 linux      | total=104 (direct text)
+[normalize] +1 linux      | total=105 (direct text)
+[normalize] +1 linux      | total=106 (direct text)
+[normalize] +1 linux      | total=107 (direct text)
+[normalize] +1 linux      | total=108 (direct text)
+[normalize] +1 linux      | total=109 (direct text)
+[normalize] +1 linux      | total=110 (direct text)
+[normalize] +1 linux      | total=111 (direct text)
+[normalize] +1 linux      | total=112 (direct text)
+[normalize] +1 linux      | total=113 (direct text)
+[normalize] +1 linux      | total=114 (direct text)
+[normalize] +1 linux      | total=115 (direct text)
+[normalize] +1 linux      | total=116 (direct text)
+[normalize] +1 linux      | total=117 (direct text)
+[normalize] +1 linux      | total=118 (direct text)
+[normalize] +1 linux      | total=119 (direct text)
+[normalize] +1 linux      | total=120 (direct text)
+[normalize] +1 linux      | total=121 (direct text)
+[normalize] +1 linux      | total=122 (direct text)
+[normalize] +1 linux      | total=123 (direct text)
+[normalize] +1 linux      | total=124 (direct text)
+[normalize] +1 linux      | total=125 (direct text)
+[normalize] +1 linux      | total=126 (direct text)
+[normalize] +1 linux      | total=127 (direct text)
+[normalize] +1 linux      | total=128 (direct text)
+[normalize] +1 linux      | total=129 (direct text)
+[normalize] +1 linux      | total=130 (direct text)
+[normalize] +1 linux      | total=131 (direct text)
+[normalize] +1 linux      | total=132 (direct text)
+[normalize] +1 linux      | total=133 (direct text)
+[normalize] +1 linux      | total=134 (direct text)
+[normalize] +1 linux      | total=135 (direct text)
+[normalize] +1 linux      | total=136 (direct text)
+[normalize] +1 linux      | total=137 (direct text)
+[normalize] +1 linux      | total=138 (direct text)
+[normalize] +1 linux      | total=139 (direct text)
+[normalize] +1 linux      | total=140 (direct text)
+[normalize] +1 linux      | total=141 (direct text)
+[normalize] +1 linux      | total=142 (direct text)
+[normalize] +1 linux      | total=143 (direct text)
+[normalize] +1 linux      | total=144 (direct text)
+[normalize] +1 linux      | total=145 (direct text)
+[normalize] +1 linux      | total=146 (direct text)
+[normalize] Offset: file truncated (0 < 10223), resetting
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1 CS=0 | total=147
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=2 CS=0 | total=148
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=3 CS=0 | total=149
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=4 CS=0 | total=150
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=5 CS=0 | total=151
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=6 CS=0 | total=152
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=7 CS=0 | total=153
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=8 CS=0 | total=154
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=9 CS=0 | total=155
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=10 CS=0 | total=156
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=11 CS=0 | total=157
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=12 CS=0 | total=158
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=13 CS=0 | total=159
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=14 CS=0 | total=160
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=15 CS=0 | total=161
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=16 CS=0 | total=162
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=17 CS=0 | total=163
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=18 CS=0 | total=164
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=19 CS=0 | total=165
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=20 CS=0 | total=166
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=21 CS=0 | total=167
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=22 CS=0 | total=168
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=23 CS=0 | total=169
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=24 CS=0 | total=170
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=25 CS=0 | total=171
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=26 CS=0 | total=172
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=27 CS=0 | total=173
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=28 CS=0 | total=174
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=29 CS=0 | total=175
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=30 CS=0 | total=176
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=31 CS=0 | total=177
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=32 CS=0 | total=178
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=33 CS=0 | total=179
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=34 CS=0 | total=180
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=35 CS=0 | total=181
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=36 CS=0 | total=182
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=37 CS=0 | total=183
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=38 CS=0 | total=184
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=39 CS=0 | total=185
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=40 CS=0 | total=186
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=41 CS=0 | total=187
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=42 CS=0 | total=188
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=43 CS=0 | total=189
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=44 CS=0 | total=190
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=45 CS=0 | total=191
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=46 CS=0 | total=192
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=47 CS=0 | total=193
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=48 CS=0 | total=194
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=49 CS=0 | total=195
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=50 CS=0 | total=196
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=51 CS=0 | total=197
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=52 CS=0 | total=198
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=53 CS=0 | total=199
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=54 CS=0 | total=200
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=55 CS=0 | total=201
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=56 CS=0 | total=202
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=57 CS=0 | total=203
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=58 CS=0 | total=204
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=59 CS=0 | total=205
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=60 CS=0 | total=206
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=61 CS=0 | total=207
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=62 CS=0 | total=208
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=63 CS=0 | total=209
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=64 CS=0 | total=210
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=65 CS=0 | total=211
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=66 CS=0 | total=212
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=67 CS=0 | total=213
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=68 CS=0 | total=214
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=69 CS=0 | total=215
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=70 CS=0 | total=216
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=71 CS=0 | total=217
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=72 CS=0 | total=218
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=73 CS=0 | total=219
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=74 CS=0 | total=220
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=75 CS=0 | total=221
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=76 CS=0 | total=222
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=77 CS=0 | total=223
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=78 CS=0 | total=224
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=79 CS=0 | total=225
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=80 CS=0 | total=226
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=81 CS=0 | total=227
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=82 CS=0 | total=228
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=83 CS=0 | total=229
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=84 CS=0 | total=230
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=85 CS=0 | total=231
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=86 CS=0 | total=232
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=87 CS=0 | total=233
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=88 CS=0 | total=234
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=89 CS=0 | total=235
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=90 CS=0 | total=236
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=91 CS=0 | total=237
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=92 CS=0 | total=238
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=93 CS=0 | total=239
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=94 CS=0 | total=240
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=95 CS=0 | total=241
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=96 CS=0 | total=242
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=97 CS=0 | total=243
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=98 CS=0 | total=244
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=99 CS=0 | total=245
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=100 CS=0 | total=246
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=101 CS=0 | total=247
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=102 CS=0 | total=248
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=103 CS=0 | total=249
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=104 CS=0 | total=250
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=105 CS=0 | total=251
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=106 CS=0 | total=252
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=107 CS=0 | total=253
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=108 CS=0 | total=254
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=109 CS=0 | total=255
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=110 CS=0 | total=256
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=111 CS=0 | total=257
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=112 CS=0 | total=258
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=113 CS=0 | total=259
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=114 CS=0 | total=260
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=115 CS=0 | total=261
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=116 CS=0 | total=262
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=117 CS=0 | total=263
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=118 CS=0 | total=264
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=119 CS=0 | total=265
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=120 CS=0 | total=266
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=121 CS=0 | total=267
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=122 CS=0 | total=268
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=123 CS=0 | total=269
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=124 CS=0 | total=270
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=125 CS=0 | total=271
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=126 CS=0 | total=272
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=127 CS=0 | total=273
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=128 CS=0 | total=274
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=129 CS=0 | total=275
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=130 CS=0 | total=276
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=131 CS=0 | total=277
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=132 CS=0 | total=278
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=133 CS=0 | total=279
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=134 CS=0 | total=280
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=135 CS=0 | total=281
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=136 CS=0 | total=282
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=137 CS=0 | total=283
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=138 CS=0 | total=284
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=139 CS=0 | total=285
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=140 CS=0 | total=286
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=141 CS=0 | total=287
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=142 CS=0 | total=288
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=143 CS=0 | total=289
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=144 CS=0 | total=290
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=145 CS=0 | total=291
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=146 CS=0 | total=292
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=147 CS=0 | total=293
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=148 CS=0 | total=294
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=149 CS=0 | total=295
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=150 CS=0 | total=296
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=151 CS=0 | total=297
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=152 CS=0 | total=298
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=153 CS=0 | total=299
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=154 CS=0 | total=300
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=155 CS=0 | total=301
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=156 CS=0 | total=302
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=157 CS=0 | total=303
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=158 CS=0 | total=304
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=159 CS=0 | total=305
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=160 CS=0 | total=306
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=161 CS=0 | total=307
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=162 CS=0 | total=308
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=163 CS=0 | total=309
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=164 CS=0 | total=310
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=165 CS=0 | total=311
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=166 CS=0 | total=312
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=167 CS=0 | total=313
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=168 CS=0 | total=314
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=169 CS=0 | total=315
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=170 CS=0 | total=316
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=171 CS=0 | total=317
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=172 CS=0 | total=318
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=173 CS=0 | total=319
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=174 CS=0 | total=320
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=175 CS=0 | total=321
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=176 CS=0 | total=322
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=177 CS=0 | total=323
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=178 CS=0 | total=324
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=179 CS=0 | total=325
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=180 CS=0 | total=326
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=181 CS=0 | total=327
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=182 CS=0 | total=328
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=183 CS=0 | total=329
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=184 CS=0 | total=330
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=185 CS=0 | total=331
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=186 CS=0 | total=332
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=187 CS=0 | total=333
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=188 CS=0 | total=334
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=189 CS=0 | total=335
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=190 CS=0 | total=336
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=191 CS=0 | total=337
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=192 CS=0 | total=338
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=193 CS=0 | total=339
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=194 CS=0 | total=340
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=195 CS=0 | total=341
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=196 CS=0 | total=342
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=197 CS=0 | total=343
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=198 CS=0 | total=344
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=199 CS=0 | total=345
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=200 CS=0 | total=346
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=201 CS=0 | total=347
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=202 CS=0 | total=348
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=203 CS=0 | total=349
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=204 CS=0 | total=350
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=205 CS=0 | total=351
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=206 CS=0 | total=352
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=207 CS=0 | total=353
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=208 CS=0 | total=354
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=209 CS=0 | total=355
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=210 CS=0 | total=356
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=211 CS=0 | total=357
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=212 CS=0 | total=358
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=213 CS=0 | total=359
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=214 CS=0 | total=360
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=215 CS=0 | total=361
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=216 CS=0 | total=362
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=217 CS=0 | total=363
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=218 CS=0 | total=364
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=219 CS=0 | total=365
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=220 CS=0 | total=366
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=221 CS=0 | total=367
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=222 CS=0 | total=368
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=223 CS=0 | total=369
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=224 CS=0 | total=370
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=225 CS=0 | total=371
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=226 CS=0 | total=372
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=227 CS=0 | total=373
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=228 CS=0 | total=374
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=229 CS=0 | total=375
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=230 CS=0 | total=376
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=231 CS=0 | total=377
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=232 CS=0 | total=378
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=233 CS=0 | total=379
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=234 CS=0 | total=380
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=235 CS=0 | total=381
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=236 CS=0 | total=382
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=237 CS=0 | total=383
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=238 CS=0 | total=384
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=239 CS=0 | total=385
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=240 CS=0 | total=386
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=241 CS=0 | total=387
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=242 CS=0 | total=388
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=243 CS=0 | total=389
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=244 CS=0 | total=390
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=245 CS=0 | total=391
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=246 CS=0 | total=392
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=247 CS=0 | total=393
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=248 CS=0 | total=394
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=249 CS=0 | total=395
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=250 CS=0 | total=396
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=251 CS=0 | total=397
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=252 CS=0 | total=398
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=253 CS=0 | total=399
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=254 CS=0 | total=400
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=255 CS=0 | total=401
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=256 CS=0 | total=402
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=257 CS=0 | total=403
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=258 CS=0 | total=404
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=259 CS=0 | total=405
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=260 CS=0 | total=406
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=261 CS=0 | total=407
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=262 CS=0 | total=408
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=263 CS=0 | total=409
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=264 CS=0 | total=410
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=265 CS=0 | total=411
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=266 CS=0 | total=412
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=267 CS=0 | total=413
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=268 CS=0 | total=414
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=269 CS=0 | total=415
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=270 CS=0 | total=416
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=271 CS=0 | total=417
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=272 CS=0 | total=418
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=273 CS=0 | total=419
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=274 CS=0 | total=420
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=275 CS=0 | total=421
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=276 CS=0 | total=422
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=277 CS=0 | total=423
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=278 CS=0 | total=424
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=279 CS=0 | total=425
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=280 CS=0 | total=426
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=281 CS=0 | total=427
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=282 CS=0 | total=428
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=283 CS=0 | total=429
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=284 CS=0 | total=430
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=285 CS=0 | total=431
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=286 CS=0 | total=432
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=287 CS=0 | total=433
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=288 CS=0 | total=434
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=289 CS=0 | total=435
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=290 CS=0 | total=436
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=291 CS=0 | total=437
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=292 CS=0 | total=438
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=293 CS=0 | total=439
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=294 CS=0 | total=440
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=295 CS=0 | total=441
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=296 CS=0 | total=442
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=297 CS=0 | total=443
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=298 CS=0 | total=444
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=299 CS=0 | total=445
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=300 CS=0 | total=446
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=301 CS=0 | total=447
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=302 CS=0 | total=448
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=303 CS=0 | total=449
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=304 CS=0 | total=450
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=305 CS=0 | total=451
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=306 CS=0 | total=452
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=307 CS=0 | total=453
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=308 CS=0 | total=454
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=309 CS=0 | total=455
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=310 CS=0 | total=456
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=311 CS=0 | total=457
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=312 CS=0 | total=458
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=313 CS=0 | total=459
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=314 CS=0 | total=460
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=315 CS=0 | total=461
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=316 CS=0 | total=462
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=317 CS=0 | total=463
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=318 CS=0 | total=464
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=319 CS=0 | total=465
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=320 CS=0 | total=466
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=321 CS=0 | total=467
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=322 CS=0 | total=468
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=323 CS=0 | total=469
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=324 CS=0 | total=470
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=325 CS=0 | total=471
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=326 CS=0 | total=472
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=327 CS=0 | total=473
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=328 CS=0 | total=474
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=329 CS=0 | total=475
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=330 CS=0 | total=476
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=331 CS=0 | total=477
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=332 CS=0 | total=478
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=333 CS=0 | total=479
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=334 CS=0 | total=480
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=335 CS=0 | total=481
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=336 CS=0 | total=482
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=337 CS=0 | total=483
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=338 CS=0 | total=484
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=339 CS=0 | total=485
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=340 CS=0 | total=486
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=341 CS=0 | total=487
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=342 CS=0 | total=488
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=343 CS=0 | total=489
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=344 CS=0 | total=490
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=345 CS=0 | total=491
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=346 CS=0 | total=492
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=347 CS=0 | total=493
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=348 CS=0 | total=494
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=349 CS=0 | total=495
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=350 CS=0 | total=496
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=351 CS=0 | total=497
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=352 CS=0 | total=498
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=353 CS=0 | total=499
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=354 CS=0 | total=500
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=355 CS=0 | total=501
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=356 CS=0 | total=502
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=357 CS=0 | total=503
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=358 CS=0 | total=504
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=359 CS=0 | total=505
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=360 CS=0 | total=506
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=361 CS=0 | total=507
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=362 CS=0 | total=508
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=363 CS=0 | total=509
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=364 CS=0 | total=510
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=365 CS=0 | total=511
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=366 CS=0 | total=512
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=367 CS=0 | total=513
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=368 CS=0 | total=514
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=369 CS=0 | total=515
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=370 CS=0 | total=516
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=371 CS=0 | total=517
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=372 CS=0 | total=518
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=373 CS=0 | total=519
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=374 CS=0 | total=520
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=375 CS=0 | total=521
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=376 CS=0 | total=522
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=377 CS=0 | total=523
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=378 CS=0 | total=524
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=379 CS=0 | total=525
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=380 CS=0 | total=526
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=381 CS=0 | total=527
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=382 CS=0 | total=528
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=383 CS=0 | total=529
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=384 CS=0 | total=530
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=385 CS=0 | total=531
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=386 CS=0 | total=532
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=387 CS=0 | total=533
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=388 CS=0 | total=534
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=389 CS=0 | total=535
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=390 CS=0 | total=536
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=391 CS=0 | total=537
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=392 CS=0 | total=538
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=393 CS=0 | total=539
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=394 CS=0 | total=540
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=395 CS=0 | total=541
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=396 CS=0 | total=542
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=397 CS=0 | total=543
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=398 CS=0 | total=544
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=399 CS=0 | total=545
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=400 CS=0 | total=546
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=401 CS=0 | total=547
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=402 CS=0 | total=548
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=403 CS=0 | total=549
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=404 CS=0 | total=550
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=405 CS=0 | total=551
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=406 CS=0 | total=552
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=407 CS=0 | total=553
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=408 CS=0 | total=554
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=409 CS=0 | total=555
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=410 CS=0 | total=556
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=411 CS=0 | total=557
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=412 CS=0 | total=558
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=413 CS=0 | total=559
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=414 CS=0 | total=560
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=415 CS=0 | total=561
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=416 CS=0 | total=562
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=417 CS=0 | total=563
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=418 CS=0 | total=564
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=419 CS=0 | total=565
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=420 CS=0 | total=566
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=421 CS=0 | total=567
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=422 CS=0 | total=568
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=423 CS=0 | total=569
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=424 CS=0 | total=570
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=425 CS=0 | total=571
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=426 CS=0 | total=572
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=427 CS=0 | total=573
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=428 CS=0 | total=574
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=429 CS=0 | total=575
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=430 CS=0 | total=576
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=431 CS=0 | total=577
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=432 CS=0 | total=578
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=433 CS=0 | total=579
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=434 CS=0 | total=580
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=435 CS=0 | total=581
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=436 CS=0 | total=582
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=437 CS=0 | total=583
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=438 CS=0 | total=584
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=439 CS=0 | total=585
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=440 CS=0 | total=586
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=441 CS=0 | total=587
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=442 CS=0 | total=588
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=443 CS=0 | total=589
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=444 CS=0 | total=590
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=445 CS=0 | total=591
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=446 CS=0 | total=592
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=447 CS=0 | total=593
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=448 CS=0 | total=594
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=449 CS=0 | total=595
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=450 CS=0 | total=596
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=451 CS=0 | total=597
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=452 CS=0 | total=598
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=453 CS=0 | total=599
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=454 CS=0 | total=600
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=455 CS=0 | total=601
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=456 CS=0 | total=602
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=457 CS=0 | total=603
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=458 CS=0 | total=604
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=459 CS=0 | total=605
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=460 CS=0 | total=606
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=461 CS=0 | total=607
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=462 CS=0 | total=608
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=463 CS=0 | total=609
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=464 CS=0 | total=610
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=465 CS=0 | total=611
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=466 CS=0 | total=612
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=467 CS=0 | total=613
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=468 CS=0 | total=614
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=469 CS=0 | total=615
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=470 CS=0 | total=616
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=471 CS=0 | total=617
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=472 CS=0 | total=618
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=473 CS=0 | total=619
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=474 CS=0 | total=620
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=475 CS=0 | total=621
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=476 CS=0 | total=622
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=477 CS=0 | total=623
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=478 CS=0 | total=624
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=479 CS=0 | total=625
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=480 CS=0 | total=626
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=481 CS=0 | total=627
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=482 CS=0 | total=628
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=483 CS=0 | total=629
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=484 CS=0 | total=630
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=485 CS=0 | total=631
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=486 CS=0 | total=632
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=487 CS=0 | total=633
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=488 CS=0 | total=634
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=489 CS=0 | total=635
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=490 CS=0 | total=636
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=491 CS=0 | total=637
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=492 CS=0 | total=638
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=493 CS=0 | total=639
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=494 CS=0 | total=640
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=495 CS=0 | total=641
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=496 CS=0 | total=642
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=497 CS=0 | total=643
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=498 CS=0 | total=644
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=499 CS=0 | total=645
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=500 CS=0 | total=646
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=501 CS=0 | total=647
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=502 CS=0 | total=648
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=503 CS=0 | total=649
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=504 CS=0 | total=650
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=505 CS=0 | total=651
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=506 CS=0 | total=652
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=507 CS=0 | total=653
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=508 CS=0 | total=654
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=509 CS=0 | total=655
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=510 CS=0 | total=656
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=511 CS=0 | total=657
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=512 CS=0 | total=658
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=513 CS=0 | total=659
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=514 CS=0 | total=660
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=515 CS=0 | total=661
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=516 CS=0 | total=662
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=517 CS=0 | total=663
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=518 CS=0 | total=664
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=519 CS=0 | total=665
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=520 CS=0 | total=666
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=521 CS=0 | total=667
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=522 CS=0 | total=668
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=523 CS=0 | total=669
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=524 CS=0 | total=670
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=525 CS=0 | total=671
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=526 CS=0 | total=672
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=527 CS=0 | total=673
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=528 CS=0 | total=674
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=529 CS=0 | total=675
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=530 CS=0 | total=676
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=531 CS=0 | total=677
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=532 CS=0 | total=678
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=533 CS=0 | total=679
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=534 CS=0 | total=680
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=535 CS=0 | total=681
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=536 CS=0 | total=682
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=537 CS=0 | total=683
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=538 CS=0 | total=684
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=539 CS=0 | total=685
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=540 CS=0 | total=686
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=541 CS=0 | total=687
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=542 CS=0 | total=688
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=543 CS=0 | total=689
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=544 CS=0 | total=690
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=545 CS=0 | total=691
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=546 CS=0 | total=692
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=547 CS=0 | total=693
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=548 CS=0 | total=694
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=549 CS=0 | total=695
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=550 CS=0 | total=696
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=551 CS=0 | total=697
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=552 CS=0 | total=698
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=553 CS=0 | total=699
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=554 CS=0 | total=700
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=555 CS=0 | total=701
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=556 CS=0 | total=702
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=557 CS=0 | total=703
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=558 CS=0 | total=704
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=559 CS=0 | total=705
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=560 CS=0 | total=706
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=561 CS=0 | total=707
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=562 CS=0 | total=708
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=563 CS=0 | total=709
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=564 CS=0 | total=710
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=565 CS=0 | total=711
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=566 CS=0 | total=712
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=567 CS=0 | total=713
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=568 CS=0 | total=714
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=569 CS=0 | total=715
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=570 CS=0 | total=716
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=571 CS=0 | total=717
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=572 CS=0 | total=718
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=573 CS=0 | total=719
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=574 CS=0 | total=720
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=575 CS=0 | total=721
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=576 CS=0 | total=722
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=577 CS=0 | total=723
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=578 CS=0 | total=724
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=579 CS=0 | total=725
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=580 CS=0 | total=726
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=581 CS=0 | total=727
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=582 CS=0 | total=728
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=583 CS=0 | total=729
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=584 CS=0 | total=730
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=585 CS=0 | total=731
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=586 CS=0 | total=732
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=587 CS=0 | total=733
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=588 CS=0 | total=734
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=589 CS=0 | total=735
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=590 CS=0 | total=736
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=591 CS=0 | total=737
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=592 CS=0 | total=738
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=593 CS=0 | total=739
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=594 CS=0 | total=740
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=595 CS=0 | total=741
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=596 CS=0 | total=742
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=597 CS=0 | total=743
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=598 CS=0 | total=744
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=599 CS=0 | total=745
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=600 CS=0 | total=746
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=601 CS=0 | total=747
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=602 CS=0 | total=748
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=603 CS=0 | total=749
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=604 CS=0 | total=750
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=605 CS=0 | total=751
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=606 CS=0 | total=752
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=607 CS=0 | total=753
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=608 CS=0 | total=754
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=609 CS=0 | total=755
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=610 CS=0 | total=756
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=611 CS=0 | total=757
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=612 CS=0 | total=758
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=613 CS=0 | total=759
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=614 CS=0 | total=760
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=615 CS=0 | total=761
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=616 CS=0 | total=762
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=617 CS=0 | total=763
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=618 CS=0 | total=764
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=619 CS=0 | total=765
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=620 CS=0 | total=766
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=621 CS=0 | total=767
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=622 CS=0 | total=768
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=623 CS=0 | total=769
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=624 CS=0 | total=770
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=625 CS=0 | total=771
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=626 CS=0 | total=772
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=627 CS=0 | total=773
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=628 CS=0 | total=774
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=629 CS=0 | total=775
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=630 CS=0 | total=776
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=631 CS=0 | total=777
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=632 CS=0 | total=778
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=633 CS=0 | total=779
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=634 CS=0 | total=780
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=635 CS=0 | total=781
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=636 CS=0 | total=782
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=637 CS=0 | total=783
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=638 CS=0 | total=784
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=639 CS=0 | total=785
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=640 CS=0 | total=786
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=641 CS=0 | total=787
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=642 CS=0 | total=788
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=643 CS=0 | total=789
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=644 CS=0 | total=790
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=645 CS=0 | total=791
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=646 CS=0 | total=792
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=647 CS=0 | total=793
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=648 CS=0 | total=794
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=649 CS=0 | total=795
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=650 CS=0 | total=796
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=651 CS=0 | total=797
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=652 CS=0 | total=798
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=653 CS=0 | total=799
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=654 CS=0 | total=800
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=655 CS=0 | total=801
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=656 CS=0 | total=802
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=657 CS=0 | total=803
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=658 CS=0 | total=804
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=659 CS=0 | total=805
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=660 CS=0 | total=806
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=661 CS=0 | total=807
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=662 CS=0 | total=808
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=663 CS=0 | total=809
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=664 CS=0 | total=810
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=665 CS=0 | total=811
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=666 CS=0 | total=812
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=667 CS=0 | total=813
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=668 CS=0 | total=814
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=669 CS=0 | total=815
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=670 CS=0 | total=816
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=671 CS=0 | total=817
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=672 CS=0 | total=818
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=673 CS=0 | total=819
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=674 CS=0 | total=820
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=675 CS=0 | total=821
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=676 CS=0 | total=822
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=677 CS=0 | total=823
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=678 CS=0 | total=824
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=679 CS=0 | total=825
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=680 CS=0 | total=826
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=681 CS=0 | total=827
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=682 CS=0 | total=828
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=683 CS=0 | total=829
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=684 CS=0 | total=830
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=685 CS=0 | total=831
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=686 CS=0 | total=832
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=687 CS=0 | total=833
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=688 CS=0 | total=834
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=689 CS=0 | total=835
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=690 CS=0 | total=836
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=691 CS=0 | total=837
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=692 CS=0 | total=838
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=693 CS=0 | total=839
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=694 CS=0 | total=840
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=695 CS=0 | total=841
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=696 CS=0 | total=842
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=697 CS=0 | total=843
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=698 CS=0 | total=844
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=699 CS=0 | total=845
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=700 CS=0 | total=846
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=701 CS=0 | total=847
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=702 CS=0 | total=848
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=703 CS=0 | total=849
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=704 CS=0 | total=850
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=705 CS=0 | total=851
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=706 CS=0 | total=852
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=707 CS=0 | total=853
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=708 CS=0 | total=854
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=709 CS=0 | total=855
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=710 CS=0 | total=856
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=711 CS=0 | total=857
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=712 CS=0 | total=858
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=713 CS=0 | total=859
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=714 CS=0 | total=860
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=715 CS=0 | total=861
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=716 CS=0 | total=862
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=717 CS=0 | total=863
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=718 CS=0 | total=864
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=719 CS=0 | total=865
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=720 CS=0 | total=866
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=721 CS=0 | total=867
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=722 CS=0 | total=868
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=723 CS=0 | total=869
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=724 CS=0 | total=870
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=725 CS=0 | total=871
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=726 CS=0 | total=872
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=727 CS=0 | total=873
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=728 CS=0 | total=874
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=729 CS=0 | total=875
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=730 CS=0 | total=876
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=731 CS=0 | total=877
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=732 CS=0 | total=878
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=733 CS=0 | total=879
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=734 CS=0 | total=880
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=735 CS=0 | total=881
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=736 CS=0 | total=882
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=737 CS=0 | total=883
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=738 CS=0 | total=884
+[normalize] Offset: file truncated (1378978 < 1387806), resetting
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=739 CS=0 | total=885
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=740 CS=0 | total=886
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=741 CS=0 | total=887
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=742 CS=0 | total=888
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=743 CS=0 | total=889
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=744 CS=0 | total=890
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=745 CS=0 | total=891
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=746 CS=0 | total=892
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=747 CS=0 | total=893
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=748 CS=0 | total=894
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=749 CS=0 | total=895
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=750 CS=0 | total=896
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=751 CS=0 | total=897
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=752 CS=0 | total=898
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=753 CS=0 | total=899
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=754 CS=0 | total=900
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=755 CS=0 | total=901
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=756 CS=0 | total=902
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=757 CS=0 | total=903
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=758 CS=0 | total=904
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=759 CS=0 | total=905
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=760 CS=0 | total=906
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=761 CS=0 | total=907
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=762 CS=0 | total=908
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=763 CS=0 | total=909
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=764 CS=0 | total=910
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=765 CS=0 | total=911
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=766 CS=0 | total=912
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=767 CS=0 | total=913
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=768 CS=0 | total=914
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=769 CS=0 | total=915
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=770 CS=0 | total=916
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=771 CS=0 | total=917
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=772 CS=0 | total=918
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=773 CS=0 | total=919
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=774 CS=0 | total=920
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=775 CS=0 | total=921
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=776 CS=0 | total=922
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=777 CS=0 | total=923
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=778 CS=0 | total=924
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=779 CS=0 | total=925
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=780 CS=0 | total=926
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=781 CS=0 | total=927
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=782 CS=0 | total=928
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=783 CS=0 | total=929
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=784 CS=0 | total=930
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=785 CS=0 | total=931
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=786 CS=0 | total=932
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=787 CS=0 | total=933
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=788 CS=0 | total=934
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=789 CS=0 | total=935
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=790 CS=0 | total=936
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=791 CS=0 | total=937
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=792 CS=0 | total=938
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=793 CS=0 | total=939
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=794 CS=0 | total=940
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=795 CS=0 | total=941
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=796 CS=0 | total=942
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=797 CS=0 | total=943
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=798 CS=0 | total=944
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=799 CS=0 | total=945
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=800 CS=0 | total=946
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=801 CS=0 | total=947
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=802 CS=0 | total=948
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=803 CS=0 | total=949
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=804 CS=0 | total=950
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=805 CS=0 | total=951
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=806 CS=0 | total=952
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=807 CS=0 | total=953
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=808 CS=0 | total=954
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=809 CS=0 | total=955
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=810 CS=0 | total=956
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=811 CS=0 | total=957
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=812 CS=0 | total=958
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=813 CS=0 | total=959
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=814 CS=0 | total=960
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=815 CS=0 | total=961
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=816 CS=0 | total=962
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=817 CS=0 | total=963
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=818 CS=0 | total=964
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=819 CS=0 | total=965
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=820 CS=0 | total=966
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=821 CS=0 | total=967
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=822 CS=0 | total=968
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=823 CS=0 | total=969
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=824 CS=0 | total=970
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=825 CS=0 | total=971
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=826 CS=0 | total=972
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=827 CS=0 | total=973
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=828 CS=0 | total=974
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=829 CS=0 | total=975
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=830 CS=0 | total=976
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=831 CS=0 | total=977
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=832 CS=0 | total=978
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=833 CS=0 | total=979
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=834 CS=0 | total=980
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=835 CS=0 | total=981
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=836 CS=0 | total=982
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=837 CS=0 | total=983
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=838 CS=0 | total=984
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=839 CS=0 | total=985
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=840 CS=0 | total=986
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=841 CS=0 | total=987
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=842 CS=0 | total=988
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=843 CS=0 | total=989
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=844 CS=0 | total=990
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=845 CS=0 | total=991
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=846 CS=0 | total=992
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=847 CS=0 | total=993
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=848 CS=0 | total=994
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=849 CS=0 | total=995
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=850 CS=0 | total=996
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=851 CS=0 | total=997
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=852 CS=0 | total=998
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=853 CS=0 | total=999
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=854 CS=0 | total=1000
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=855 CS=0 | total=1001
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=856 CS=0 | total=1002
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=857 CS=0 | total=1003
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=858 CS=0 | total=1004
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=859 CS=0 | total=1005
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=860 CS=0 | total=1006
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=861 CS=0 | total=1007
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=862 CS=0 | total=1008
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=863 CS=0 | total=1009
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=864 CS=0 | total=1010
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=865 CS=0 | total=1011
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=866 CS=0 | total=1012
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=867 CS=0 | total=1013
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=868 CS=0 | total=1014
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=869 CS=0 | total=1015
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=870 CS=0 | total=1016
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=871 CS=0 | total=1017
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=872 CS=0 | total=1018
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=873 CS=0 | total=1019
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=874 CS=0 | total=1020
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=875 CS=0 | total=1021
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=876 CS=0 | total=1022
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=877 CS=0 | total=1023
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=878 CS=0 | total=1024
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=879 CS=0 | total=1025
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=880 CS=0 | total=1026
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=881 CS=0 | total=1027
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=882 CS=0 | total=1028
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=883 CS=0 | total=1029
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=884 CS=0 | total=1030
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=885 CS=0 | total=1031
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=886 CS=0 | total=1032
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=887 CS=0 | total=1033
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=888 CS=0 | total=1034
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=889 CS=0 | total=1035
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=890 CS=0 | total=1036
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=891 CS=0 | total=1037
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=892 CS=0 | total=1038
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=893 CS=0 | total=1039
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=894 CS=0 | total=1040
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=895 CS=0 | total=1041
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=896 CS=0 | total=1042
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=897 CS=0 | total=1043
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=898 CS=0 | total=1044
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=899 CS=0 | total=1045
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=900 CS=0 | total=1046
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=901 CS=0 | total=1047
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=902 CS=0 | total=1048
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=903 CS=0 | total=1049
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=904 CS=0 | total=1050
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=905 CS=0 | total=1051
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=906 CS=0 | total=1052
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=907 CS=0 | total=1053
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=908 CS=0 | total=1054
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=909 CS=0 | total=1055
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=910 CS=0 | total=1056
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=911 CS=0 | total=1057
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=912 CS=0 | total=1058
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=913 CS=0 | total=1059
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=914 CS=0 | total=1060
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=915 CS=0 | total=1061
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=916 CS=0 | total=1062
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=917 CS=0 | total=1063
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=918 CS=0 | total=1064
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=919 CS=0 | total=1065
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=920 CS=0 | total=1066
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=921 CS=0 | total=1067
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=922 CS=0 | total=1068
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=923 CS=0 | total=1069
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=924 CS=0 | total=1070
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=925 CS=0 | total=1071
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=926 CS=0 | total=1072
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=927 CS=0 | total=1073
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=928 CS=0 | total=1074
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=929 CS=0 | total=1075
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=930 CS=0 | total=1076
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=931 CS=0 | total=1077
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=932 CS=0 | total=1078
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=933 CS=0 | total=1079
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=934 CS=0 | total=1080
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=935 CS=0 | total=1081
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=936 CS=0 | total=1082
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=937 CS=0 | total=1083
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=938 CS=0 | total=1084
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=939 CS=0 | total=1085
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=940 CS=0 | total=1086
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=941 CS=0 | total=1087
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=942 CS=0 | total=1088
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=943 CS=0 | total=1089
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=944 CS=0 | total=1090
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=945 CS=0 | total=1091
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=946 CS=0 | total=1092
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=947 CS=0 | total=1093
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=948 CS=0 | total=1094
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=949 CS=0 | total=1095
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=950 CS=0 | total=1096
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=951 CS=0 | total=1097
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=952 CS=0 | total=1098
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=953 CS=0 | total=1099
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=954 CS=0 | total=1100
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=955 CS=0 | total=1101
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=956 CS=0 | total=1102
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=957 CS=0 | total=1103
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=958 CS=0 | total=1104
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=959 CS=0 | total=1105
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=960 CS=0 | total=1106
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=961 CS=0 | total=1107
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=962 CS=0 | total=1108
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=963 CS=0 | total=1109
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=964 CS=0 | total=1110
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=965 CS=0 | total=1111
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=966 CS=0 | total=1112
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=967 CS=0 | total=1113
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=968 CS=0 | total=1114
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=969 CS=0 | total=1115
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=970 CS=0 | total=1116
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=971 CS=0 | total=1117
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=972 CS=0 | total=1118
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=973 CS=0 | total=1119
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=974 CS=0 | total=1120
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=975 CS=0 | total=1121
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=976 CS=0 | total=1122
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=977 CS=0 | total=1123
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=978 CS=0 | total=1124
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=979 CS=0 | total=1125
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=980 CS=0 | total=1126
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=981 CS=0 | total=1127
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=982 CS=0 | total=1128
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=983 CS=0 | total=1129
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=984 CS=0 | total=1130
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=985 CS=0 | total=1131
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=986 CS=0 | total=1132
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=987 CS=0 | total=1133
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=988 CS=0 | total=1134
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=989 CS=0 | total=1135
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=990 CS=0 | total=1136
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=991 CS=0 | total=1137
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=992 CS=0 | total=1138
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=993 CS=0 | total=1139
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=994 CS=0 | total=1140
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=995 CS=0 | total=1141
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=996 CS=0 | total=1142
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=997 CS=0 | total=1143
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=998 CS=0 | total=1144
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=999 CS=0 | total=1145
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1000 CS=0 | total=1146
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1001 CS=0 | total=1147
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1002 CS=0 | total=1148
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1003 CS=0 | total=1149
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1004 CS=0 | total=1150
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1005 CS=0 | total=1151
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1006 CS=0 | total=1152
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1007 CS=0 | total=1153
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1008 CS=0 | total=1154
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1009 CS=0 | total=1155
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1010 CS=0 | total=1156
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1011 CS=0 | total=1157
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1012 CS=0 | total=1158
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1013 CS=0 | total=1159
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1014 CS=0 | total=1160
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1015 CS=0 | total=1161
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1016 CS=0 | total=1162
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1017 CS=0 | total=1163
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1018 CS=0 | total=1164
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1019 CS=0 | total=1165
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1020 CS=0 | total=1166
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1021 CS=0 | total=1167
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1022 CS=0 | total=1168
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1023 CS=0 | total=1169
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1024 CS=0 | total=1170
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1025 CS=0 | total=1171
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1026 CS=0 | total=1172
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1027 CS=0 | total=1173
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1028 CS=0 | total=1174
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1029 CS=0 | total=1175
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1030 CS=0 | total=1176
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1031 CS=0 | total=1177
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1032 CS=0 | total=1178
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1033 CS=0 | total=1179
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1034 CS=0 | total=1180
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1035 CS=0 | total=1181
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1036 CS=0 | total=1182
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1037 CS=0 | total=1183
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1038 CS=0 | total=1184
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1039 CS=0 | total=1185
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1040 CS=0 | total=1186
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1041 CS=0 | total=1187
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1042 CS=0 | total=1188
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1043 CS=0 | total=1189
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1044 CS=0 | total=1190
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1045 CS=0 | total=1191
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1046 CS=0 | total=1192
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1047 CS=0 | total=1193
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1048 CS=0 | total=1194
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1049 CS=0 | total=1195
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1050 CS=0 | total=1196
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1051 CS=0 | total=1197
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1052 CS=0 | total=1198
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1053 CS=0 | total=1199
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1054 CS=0 | total=1200
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1055 CS=0 | total=1201
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1056 CS=0 | total=1202
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1057 CS=0 | total=1203
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1058 CS=0 | total=1204
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1059 CS=0 | total=1205
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1060 CS=0 | total=1206
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1061 CS=0 | total=1207
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1062 CS=0 | total=1208
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1063 CS=0 | total=1209
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1064 CS=0 | total=1210
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1065 CS=0 | total=1211
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1066 CS=0 | total=1212
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1067 CS=0 | total=1213
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1068 CS=0 | total=1214
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1069 CS=0 | total=1215
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1070 CS=0 | total=1216
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1071 CS=0 | total=1217
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1072 CS=0 | total=1218
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1073 CS=0 | total=1219
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1074 CS=0 | total=1220
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1075 CS=0 | total=1221
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1076 CS=0 | total=1222
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1077 CS=0 | total=1223
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1078 CS=0 | total=1224
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1079 CS=0 | total=1225
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1080 CS=0 | total=1226
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1081 CS=0 | total=1227
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1082 CS=0 | total=1228
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1083 CS=0 | total=1229
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1084 CS=0 | total=1230
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1085 CS=0 | total=1231
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1086 CS=0 | total=1232
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1087 CS=0 | total=1233
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1088 CS=0 | total=1234
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1089 CS=0 | total=1235
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1090 CS=0 | total=1236
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1091 CS=0 | total=1237
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1092 CS=0 | total=1238
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1093 CS=0 | total=1239
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1094 CS=0 | total=1240
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1095 CS=0 | total=1241
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1096 CS=0 | total=1242
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1097 CS=0 | total=1243
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1098 CS=0 | total=1244
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1099 CS=0 | total=1245
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1100 CS=0 | total=1246
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1101 CS=0 | total=1247
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1102 CS=0 | total=1248
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1103 CS=0 | total=1249
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1104 CS=0 | total=1250
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1105 CS=0 | total=1251
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1106 CS=0 | total=1252
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1107 CS=0 | total=1253
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1108 CS=0 | total=1254
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1109 CS=0 | total=1255
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1110 CS=0 | total=1256
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1111 CS=0 | total=1257
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1112 CS=0 | total=1258
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1113 CS=0 | total=1259
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1114 CS=0 | total=1260
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1115 CS=0 | total=1261
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1116 CS=0 | total=1262
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1117 CS=0 | total=1263
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1118 CS=0 | total=1264
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1119 CS=0 | total=1265
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1120 CS=0 | total=1266
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1121 CS=0 | total=1267
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1122 CS=0 | total=1268
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1123 CS=0 | total=1269
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1124 CS=0 | total=1270
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1125 CS=0 | total=1271
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1126 CS=0 | total=1272
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1127 CS=0 | total=1273
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1128 CS=0 | total=1274
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1129 CS=0 | total=1275
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1130 CS=0 | total=1276
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1131 CS=0 | total=1277
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1132 CS=0 | total=1278
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1133 CS=0 | total=1279
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1134 CS=0 | total=1280
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1135 CS=0 | total=1281
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1136 CS=0 | total=1282
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1137 CS=0 | total=1283
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1138 CS=0 | total=1284
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1139 CS=0 | total=1285
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1140 CS=0 | total=1286
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1141 CS=0 | total=1287
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1142 CS=0 | total=1288
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1143 CS=0 | total=1289
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1144 CS=0 | total=1290
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1145 CS=0 | total=1291
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1146 CS=0 | total=1292
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1147 CS=0 | total=1293
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1148 CS=0 | total=1294
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1149 CS=0 | total=1295
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1150 CS=0 | total=1296
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1151 CS=0 | total=1297
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1152 CS=0 | total=1298
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1153 CS=0 | total=1299
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1154 CS=0 | total=1300
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1155 CS=0 | total=1301
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1156 CS=0 | total=1302
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1157 CS=0 | total=1303
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1158 CS=0 | total=1304
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1159 CS=0 | total=1305
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1160 CS=0 | total=1306
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1161 CS=0 | total=1307
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1162 CS=0 | total=1308
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1163 CS=0 | total=1309
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1164 CS=0 | total=1310
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1165 CS=0 | total=1311
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1166 CS=0 | total=1312
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1167 CS=0 | total=1313
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1168 CS=0 | total=1314
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1169 CS=0 | total=1315
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1170 CS=0 | total=1316
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1171 CS=0 | total=1317
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1172 CS=0 | total=1318
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1173 CS=0 | total=1319
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1174 CS=0 | total=1320
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1175 CS=0 | total=1321
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1176 CS=0 | total=1322
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1177 CS=0 | total=1323
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1178 CS=0 | total=1324
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1179 CS=0 | total=1325
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1180 CS=0 | total=1326
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1181 CS=0 | total=1327
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1182 CS=0 | total=1328
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1183 CS=0 | total=1329
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1184 CS=0 | total=1330
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1185 CS=0 | total=1331
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1186 CS=0 | total=1332
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1187 CS=0 | total=1333
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1188 CS=0 | total=1334
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1189 CS=0 | total=1335
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1190 CS=0 | total=1336
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1191 CS=0 | total=1337
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1192 CS=0 | total=1338
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1193 CS=0 | total=1339
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1194 CS=0 | total=1340
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1195 CS=0 | total=1341
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1196 CS=0 | total=1342
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1197 CS=0 | total=1343
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1198 CS=0 | total=1344
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1199 CS=0 | total=1345
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1200 CS=0 | total=1346
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1201 CS=0 | total=1347
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1202 CS=0 | total=1348
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1203 CS=0 | total=1349
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1204 CS=0 | total=1350
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1205 CS=0 | total=1351
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1206 CS=0 | total=1352
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1207 CS=0 | total=1353
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1208 CS=0 | total=1354
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1209 CS=0 | total=1355
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1210 CS=0 | total=1356
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1211 CS=0 | total=1357
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1212 CS=0 | total=1358
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1213 CS=0 | total=1359
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1214 CS=0 | total=1360
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1215 CS=0 | total=1361
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1216 CS=0 | total=1362
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1217 CS=0 | total=1363
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1218 CS=0 | total=1364
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1219 CS=0 | total=1365
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1220 CS=0 | total=1366
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1221 CS=0 | total=1367
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1222 CS=0 | total=1368
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1223 CS=0 | total=1369
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1224 CS=0 | total=1370
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1225 CS=0 | total=1371
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1226 CS=0 | total=1372
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1227 CS=0 | total=1373
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1228 CS=0 | total=1374
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1229 CS=0 | total=1375
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1230 CS=0 | total=1376
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1231 CS=0 | total=1377
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1232 CS=0 | total=1378
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1233 CS=0 | total=1379
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1234 CS=0 | total=1380
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1235 CS=0 | total=1381
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1236 CS=0 | total=1382
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1237 CS=0 | total=1383
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1238 CS=0 | total=1384
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1239 CS=0 | total=1385
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1240 CS=0 | total=1386
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1241 CS=0 | total=1387
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1242 CS=0 | total=1388
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1243 CS=0 | total=1389
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1244 CS=0 | total=1390
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1245 CS=0 | total=1391
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1246 CS=0 | total=1392
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1247 CS=0 | total=1393
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1248 CS=0 | total=1394
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1249 CS=0 | total=1395
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1250 CS=0 | total=1396
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1251 CS=0 | total=1397
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1252 CS=0 | total=1398
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1253 CS=0 | total=1399
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1254 CS=0 | total=1400
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1255 CS=0 | total=1401
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1256 CS=0 | total=1402
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1257 CS=0 | total=1403
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1258 CS=0 | total=1404
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1259 CS=0 | total=1405
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1260 CS=0 | total=1406
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1261 CS=0 | total=1407
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1262 CS=0 | total=1408
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1263 CS=0 | total=1409
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1264 CS=0 | total=1410
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1265 CS=0 | total=1411
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1266 CS=0 | total=1412
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1267 CS=0 | total=1413
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1268 CS=0 | total=1414
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1269 CS=0 | total=1415
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1270 CS=0 | total=1416
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1271 CS=0 | total=1417
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1272 CS=0 | total=1418
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1273 CS=0 | total=1419
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1274 CS=0 | total=1420
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1275 CS=0 | total=1421
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1276 CS=0 | total=1422
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1277 CS=0 | total=1423
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1278 CS=0 | total=1424
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1279 CS=0 | total=1425
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1280 CS=0 | total=1426
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1281 CS=0 | total=1427
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1282 CS=0 | total=1428
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1283 CS=0 | total=1429
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1284 CS=0 | total=1430
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1285 CS=0 | total=1431
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1286 CS=0 | total=1432
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1287 CS=0 | total=1433
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1288 CS=0 | total=1434
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1289 CS=0 | total=1435
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1290 CS=0 | total=1436
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1291 CS=0 | total=1437
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1292 CS=0 | total=1438
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1293 CS=0 | total=1439
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1294 CS=0 | total=1440
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1295 CS=0 | total=1441
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1296 CS=0 | total=1442
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1297 CS=0 | total=1443
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1298 CS=0 | total=1444
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1299 CS=0 | total=1445
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1300 CS=0 | total=1446
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1301 CS=0 | total=1447
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1302 CS=0 | total=1448
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1303 CS=0 | total=1449
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1304 CS=0 | total=1450
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1305 CS=0 | total=1451
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1306 CS=0 | total=1452
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1307 CS=0 | total=1453
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1308 CS=0 | total=1454
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1309 CS=0 | total=1455
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1310 CS=0 | total=1456
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1311 CS=0 | total=1457
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1312 CS=0 | total=1458
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1313 CS=0 | total=1459
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1314 CS=0 | total=1460
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1315 CS=0 | total=1461
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1316 CS=0 | total=1462
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1317 CS=0 | total=1463
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1318 CS=0 | total=1464
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1319 CS=0 | total=1465
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1320 CS=0 | total=1466
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1321 CS=0 | total=1467
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1322 CS=0 | total=1468
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1323 CS=0 | total=1469
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1324 CS=0 | total=1470
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1325 CS=0 | total=1471
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1326 CS=0 | total=1472
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1327 CS=0 | total=1473
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1328 CS=0 | total=1474
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1329 CS=0 | total=1475
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1330 CS=0 | total=1476
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1331 CS=0 | total=1477
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1332 CS=0 | total=1478
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1333 CS=0 | total=1479
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1334 CS=0 | total=1480
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1335 CS=0 | total=1481
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1336 CS=0 | total=1482
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1337 CS=0 | total=1483
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1338 CS=0 | total=1484
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1339 CS=0 | total=1485
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1340 CS=0 | total=1486
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1341 CS=0 | total=1487
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1342 CS=0 | total=1488
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1343 CS=0 | total=1489
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1344 CS=0 | total=1490
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1345 CS=0 | total=1491
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1346 CS=0 | total=1492
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1347 CS=0 | total=1493
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1348 CS=0 | total=1494
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1349 CS=0 | total=1495
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1350 CS=0 | total=1496
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1351 CS=0 | total=1497
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1352 CS=0 | total=1498
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1353 CS=0 | total=1499
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1354 CS=0 | total=1500
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1355 CS=0 | total=1501
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1356 CS=0 | total=1502
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1357 CS=0 | total=1503
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1358 CS=0 | total=1504
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1359 CS=0 | total=1505
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1360 CS=0 | total=1506
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1361 CS=0 | total=1507
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1362 CS=0 | total=1508
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1363 CS=0 | total=1509
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1364 CS=0 | total=1510
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1365 CS=0 | total=1511
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1366 CS=0 | total=1512
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1367 CS=0 | total=1513
+[normalize] +1 cloudtrail | WAF=0 VPC=0 WIN=0 LNX=146 FTN=0 CT=1368 CS=0 | total=1514[normalize] Starting...
+[normalize] Input:  /home/ubuntu/soc_ai/raw_sample.json
+[normalize] Output: /home/ubuntu/soc_ai/log_normalized.json
+[normalize] Start position: beginning
+[normalize] Offset: reading from beginning (test mode)
+[normalize] +1 cisco      | total=1 (direct text)
+[normalize] +1 cisco      | total=2 (direct text)
+[normalize] +1 cisco      | total=3 (direct text)
+[normalize] +1 cisco      | total=4 (direct text)
+[normalize] +1 cisco      | total=5 (direct text)
+[normalize] +1 cisco      | total=6 (direct text)
+[normalize] +1 cisco      | total=7 (direct text)
+[normalize] +1 cisco      | total=8 (direct text)
+[normalize] +1 linux      | total=9 (direct text)
+[normalize] +1 linux      | total=10 (direct text)
+[normalize] +1 linux      | total=11 (direct text)
+[normalize] +1 linux      | total=12 (direct text)
+[normalize] +1 linux      | total=13 (direct text)
+[normalize] +1 linux      | total=14 (direct text)
+[normalize] +1 linux      | total=15 (direct text)
+[normalize] +1 linux      | total=16 (direct text)
+[normalize] +1 linux      | total=17 (direct text)
+[normalize] +1 linux      | total=18 (direct text)
+[normalize] +1 linux      | total=19 (direct text)
+[normalize] +1 linux      | total=20 (direct text)
+[normalize] +1 linux      | total=21 (direct text)
+[normalize] +1 linux      | total=22 (direct text)
+[normalize] +1 linux      | total=23 (direct text)
+[normalize] +1 linux      | total=24 (direct text)
+[normalize] +1 linux      | total=25 (direct text)
+[normalize] +1 linux      | total=26 (direct text)
+[normalize] +1 linux      | total=27 (direct text)
+[normalize] +1 linux      | total=28 (direct text)
+[normalize] +1 linux      | total=29 (direct text)
+[normalize] +1 linux      | total=30 (direct text)
+[normalize] +1 linux      | total=31 (direct text)
+[normalize] +1 linux      | total=32 (direct text)
+[normalize] +1 linux      | total=33 (direct text)
+[normalize] +1 linux      | total=34 (direct text)
+[normalize] +1 linux      | total=35 (direct text)
+[normalize] +1 linux      | total=36 (direct text)
+[normalize] +1 linux      | total=37 (direct text)
+[normalize] +1 linux      | total=38 (direct text)
+[normalize] +1 linux      | total=39 (direct text)
+[normalize] +1 linux      | total=40 (direct text)
+[normalize] +1 linux      | total=41 (direct text)
+[normalize] +1 linux      | total=42 (direct text)
+[normalize] +1 linux      | total=43 (direct text)
+[normalize] +1 linux      | total=44 (direct text)
+[normalize] +1 linux      | total=45 (direct text)
+[normalize] +1 linux      | total=46 (direct text)
+[normalize] +1 linux      | total=47 (direct text)
+[normalize] +1 linux      | total=48 (direct text)
+[normalize] +1 linux      | total=49 (direct text)
+[normalize] +1 linux      | total=50 (direct text)
+[normalize] +1 linux      | total=51 (direct text)
+[normalize] +1 linux      | total=52 (direct text)
+[normalize] +1 linux      | total=53 (direct text)
+[normalize] +1 linux      | total=54 (direct text)
+[normalize] +1 linux      | total=55 (direct text)
+[normalize] +1 linux      | total=56 (direct text)
+[normalize] +1 linux      | total=57 (direct text)
+[normalize] +1 linux      | total=58 (direct text)
+[normalize] +1 linux      | total=59 (direct text)
+[normalize] +1 linux      | total=60 (direct text)
+[normalize] +1 linux      | total=61 (direct text)
+[normalize] +1 linux      | total=62 (direct text)
+[normalize] +1 linux      | total=63 (direct text)
+[normalize] +1 linux      | total=64 (direct text)
+[normalize] +1 linux      | total=65 (direct text)
+[normalize] +1 linux      | total=66 (direct text)
+[normalize] +1 linux      | total=67 (direct text)
+[normalize] +1 linux      | total=68 (direct text)
+[normalize] +1 linux      | total=69 (direct text)
+[normalize] +1 linux      | total=70 (direct text)
+[normalize] +1 linux      | total=71 (direct text)
+[normalize] +1 linux      | total=72 (direct text)
+[normalize] +1 linux      | total=73 (direct text)
+[normalize] +1 linux      | total=74 (direct text)
+[normalize] +1 linux      | total=75 (direct text)
+[normalize] +1 linux      | total=76 (direct text)
+[normalize] +1 linux      | total=77 (direct text)
+[normalize] +1 linux      | total=78 (direct text)
+[normalize] +1 fortinet   | total=79 (direct text)
+[normalize] +1 fortinet   | total=80 (direct text)
+[normalize] +1 fortinet   | total=81 (direct text)
+[normalize] +1 fortinet   | total=82 (direct text)
+[normalize] +1 fortinet   | total=83 (direct text)
+[normalize] +1 fortinet   | total=84 (direct text)
+[normalize] +1 fortinet   | total=85 (direct text)
+[normalize] +1 fortinet   | total=86 (direct text)
+[normalize] +1 fortinet   | total=87 (direct text)
+[normalize] +1 fortinet   | total=88 (direct text)
+[normalize] +1 fortinet   | total=89 (direct text)
+[normalize] +1 fortinet   | total=90 (direct text)
+[normalize] +1 fortinet   | total=91 (direct text)
+[normalize] +1 fortinet   | total=92 (direct text)
+[normalize] +1 fortinet   | total=93 (direct text)
+[normalize] +1 fortinet   | total=94 (direct text)
+[normalize] +1 fortinet   | total=95 (direct text)
+[normalize] +1 fortinet   | total=96 (direct text)
+[normalize] +1 fortinet   | total=97 (direct text)
+[normalize] +1 fortinet   | total=98 (direct text)
+[normalize] +1 fortinet   | total=99 (direct text)
+[normalize] +1 fortinet   | total=100 (direct text)
+[normalize] +1 fortinet   | total=101 (direct text)
+[normalize] +1 fortinet   | total=102 (direct text)
+[normalize] +1 fortinet   | total=103 (direct text)
+[normalize] +1 fortinet   | total=104 (direct text)
+[normalize] +1 fortinet   | total=105 (direct text)
+[normalize] +1 fortinet   | total=106 (direct text)
+[normalize] +1 fortinet   | total=107 (direct text)
+[normalize] +1 fortinet   | total=108 (direct text)
+[normalize] +1 fortinet   | total=109 (direct text)
+[normalize] +1 fortinet   | total=110 (direct text)
+[normalize] +1 fortinet   | total=111 (direct text)
+[normalize] +1 fortinet   | total=112 (direct text)
+[normalize] +1 fortinet   | total=113 (direct text)
+[normalize] +1 fortinet   | total=114 (direct text)
+[normalize] +1 fortinet   | total=115 (direct text)
+[normalize] +1 fortinet   | total=116 (direct text)
+[normalize] +1 fortinet   | total=117 (direct text)
+[normalize] +1 fortinet   | total=118 (direct text)
+[normalize] +1 fortinet   | total=119 (direct text)
+[normalize] Offset: file truncated (0 < 40305), resetting
+Traceback (most recent call last):
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1356, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1301, in main
+    norm = normalize_windows_eventlog_direct(line)
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 734, in normalize_windows_eventlog_direct
+    m = MSWINEVENTLOG_DIRECT_RE.match(line.strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MSWINEVENTLOG_DIRECT_RE' is not defined
+[normalize] Starting...
+[normalize] Input:  /home/ubuntu/soc_ai/raw_sample.json
+[normalize] Output: /home/ubuntu/soc_ai/log_normalized.json
+[normalize] Start position: beginning
+[normalize] Offset: reading from beginning (test mode)
+Traceback (most recent call last):
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1356, in <module>
+    main()
+    ~~~~^^
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 1301, in main
+    norm = normalize_windows_eventlog_direct(line)
+  File "/home/ubuntu/soc_ai/normalize-service.py", line 734, in normalize_windows_eventlog_direct
+    m = MSWINEVENTLOG_DIRECT_RE.match(line.strip())
+        ^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'MSWINEVENTLOG_DIRECT_RE' is not defined
