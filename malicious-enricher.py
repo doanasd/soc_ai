@@ -244,8 +244,7 @@ def save_abuseipdb_cache(conn, ip: str, data: dict, ttl_seconds: int):
             last_reported=excluded.last_reported, categories=excluded.categories,
             is_whitelisted=excluded.is_whitelisted, is_tor=excluded.is_tor,
             fetch_status=excluded.fetch_status, fetched_at=excluded.fetched_at,
-            expires_at=excluded.expires_at,
-            timezone=excluded.timezone
+            expires_at=excluded.expires_at
     """, (
         ip, data.get("score",0), data.get("country_code",""), data.get("country_name",""),
         data.get("city",""), data.get("isp",""), data.get("asn",""),
@@ -276,8 +275,7 @@ def save_otx_cache(conn, ip: str, data: dict, ttl_seconds: int):
             country=excluded.country, asn=excluded.asn,
             reputation_raw=excluded.reputation_raw,
             fetch_status=excluded.fetch_status, fetched_at=excluded.fetched_at,
-            expires_at=excluded.expires_at,
-            timezone=excluded.timezone
+            expires_at=excluded.expires_at
     """, (
         ip, data.get("pulse_count",0), json.dumps(data.get("pulse_names",[])),
         json.dumps(data.get("tags",[])), json.dumps(data.get("malware_families",[])),
@@ -301,8 +299,7 @@ def save_threat_feeds_cache(conn, ip: str, data: dict, ttl_seconds: int):
             threatfox_malware=excluded.threatfox_malware,
             threatfox_confidence=excluded.threatfox_confidence,
             fetch_status=excluded.fetch_status, fetched_at=excluded.fetched_at,
-            expires_at=excluded.expires_at,
-            timezone=excluded.timezone
+            expires_at=excluded.expires_at
     """, (
         ip, data.get("urlhaus_url_count",0), json.dumps(data.get("urlhaus_tags",[])),
         data.get("urlhaus_status",""), json.dumps(data.get("threatfox_malware",[])),

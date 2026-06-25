@@ -55,17 +55,37 @@ def _format_enrichment_section(top_groups: list) -> list[str]:
     lines = []
     seen_ips = set()
 
-    for row in (top_groups or []):
+    # Sắp xếp: malicious IP lên đầu
+    sorted_groups = sorted(
+        top_groups or [],
+        key=lambda r: (
+            -(r.get("malicious_src") or {}).get("confidence_score", 0),
+            -(r.get("malicious_src") or {}).get("is_malicious", False),
+        )
+    )
+
+    clean_ip_shown = 0  # Giới hạn IP sạch hiển thị
+
+    for row in sorted_groups:
         mal = row.get("malicious_src")
         src_ip = row.get("src_ip") or ""
 
-        # Hiển thị info cho mọi IP public (không chỉ malicious)
         if not src_ip or src_ip in seen_ips:
             continue
         seen_ips.add(src_ip)
 
         if not isinstance(mal, dict):
             continue
+
+        is_malicious = mal.get("is_malicious", False)
+        score = mal.get("confidence_score", 0)
+
+        # Bỏ qua IP sạch score=0 nếu đã hiển thị đủ malicious IPs
+        # hoặc đã hiển thị quá 1 IP sạch
+        if not is_malicious and score == 0:
+            if clean_ip_shown >= 1:
+                continue
+            clean_ip_shown += 1
 
         score    = mal.get("confidence_score", 0)
         severity = mal.get("threat_severity", "none")
